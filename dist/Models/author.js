@@ -20,7 +20,6 @@ const authorSchema = new mongoose_1.default.Schema({
 });
 const Author = mongoose_1.default.model('Author', authorSchema);
 exports.Author = Author;
-// Joi validator
 function validateAuthor(author) {
     const schema = joi_1.default.object({
         firstName: joi_1.default.string().min(3).required(),

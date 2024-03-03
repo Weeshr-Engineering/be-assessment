@@ -15,7 +15,6 @@ const categorySchema = new mongoose_1.default.Schema({
 });
 const Category = mongoose_1.default.model('Category', categorySchema);
 exports.Category = Category;
-// Joi validator
 function validateCategory(category) {
     const schema = joi_1.default.object({
         categoryName: joi_1.default.string().min(5).required()

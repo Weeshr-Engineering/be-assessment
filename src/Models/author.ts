@@ -17,7 +17,12 @@ const authorSchema = new mongoose.Schema({
 const Author = mongoose.model('Author', authorSchema)
 
 // Joi validator
-function validateAuthor(author: String) {
+interface authorDets {
+    firstName: string;
+    lastName: string;
+}
+
+function validateAuthor(author: authorDets) {
     const schema = Joi.object({
         firstName: Joi.string().min(3).required(),
         lastName: Joi.string().min(3).required()

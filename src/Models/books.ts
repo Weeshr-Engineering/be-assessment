@@ -18,7 +18,7 @@ const bookSchema = new mongoose.Schema({
         required: true
     }],
     publicationYear: {
-        type: Date,
+        type: String,
         required: true
     },
     isbn: {
@@ -32,13 +32,14 @@ const bookSchema = new mongoose.Schema({
 
 const Book = mongoose.model('Book', bookSchema)
 
+
 // Joi validator
-function validateBook(book: String) {
+function validateBook(book: any) {
     const schema = Joi.object({
         title: Joi.string().min(5).required(),
         author: Joi.array().required(),
         category: Joi.array().required(),
-        publicationYear: Joi.date().required(),
+        publicationYear: Joi.string().required(),
         isbn: Joi.string().min(10).max(13).required()
     })
     return schema.validate(book)

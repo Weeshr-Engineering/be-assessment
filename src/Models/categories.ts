@@ -12,7 +12,10 @@ const categorySchema = new mongoose.Schema({
 const Category = mongoose.model('Category', categorySchema)
 
 // Joi validator
-function validateCategory(category: String) {
+interface categoryDets {
+    categoryName: string
+}
+function validateCategory(category: categoryDets) {
     const schema = Joi.object({
         categoryName: Joi.string().min(5).required()
     })
