@@ -4,6 +4,7 @@ import { registerApiRoutes } from "./utils/apiUtils";
 import "dotenv/config";
 const swaggerUi = require("swagger-ui-express");
 const swaggerOptions = require("./swagger");
+import { errorHandler } from "./middlewares/errorhandler";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -15,6 +16,8 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerOptions));
 
 // Dynamically serve all routes
 registerApiRoutes("v1", app);
+
+app.use(errorHandler);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
