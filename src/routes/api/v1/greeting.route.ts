@@ -1,4 +1,4 @@
-import { Router } from 'express';
+import { Router } from "express";
 
 /**
  * @swagger
@@ -23,10 +23,10 @@ import { Router } from 'express';
  *               items:
  *                 type: string
  */
-import { getGreetings } from '../controllers/greeting.controller';
+import { getGreetings } from "../../../controllers/greeting.controller";
 
 const router = Router();
 
-router.get('/greetings', getGreetings);
+router.get("/greetings", getGreetings);
 
 module.exports = router;

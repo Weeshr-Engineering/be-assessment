@@ -1,23 +1,20 @@
-import express from 'express';
-import { readdirSync } from 'fs';
-import { join } from 'path';
-import morgan from 'morgan';
-
-const swaggerUi = require('swagger-ui-express');
-const swaggerOptions = require('./swagger');
+import express from "express";
+import morgan from "morgan";
+import { registerApiRoutes } from "./utils/apiUtils";
+import "dotenv/config";
+const swaggerUi = require("swagger-ui-express");
+const swaggerOptions = require("./swagger");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
-app.use(morgan('dev'));
+app.use(morgan("dev"));
 
 //  Swagger UI
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerOptions));
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerOptions));
 
 // Dynamically serve all routes
-readdirSync('./src/routes').map((path) => {
-    app.use('/api/v1/', require(`./routes/${path}`));
-});
+registerApiRoutes("v1", app);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
