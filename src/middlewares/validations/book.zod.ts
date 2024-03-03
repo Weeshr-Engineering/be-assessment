@@ -1,6 +1,5 @@
 import { z } from "zod";
 
-// Define validation schema for Book
 const BookSchema = z.object({
   title: z.string(),
   author: z.number().int(),

@@ -1,12 +1,15 @@
 const { z } = require("zod");
 
-// Define validation schema for Author
-const AuthorSchema = z.object({
+const authorSchema = z.object({
   email: z.string().email(),
   fullname: z.string(),
   password: z.string().min(6),
   bio: z.string().optional(),
 });
 
-// Export validation schemas
-export { AuthorSchema };
+const loginSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(6),
+});
+
+export { authorSchema, loginSchema };
