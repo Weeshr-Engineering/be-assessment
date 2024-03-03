@@ -5,9 +5,10 @@ a RESTful API for a bookstore application using Node.js, Express, and TypeScript
 ## Folder Structure
 
 ```
+|--- prisma
 |--- src
 |    |--- controllers
-|    |--- database
+|    |---
 |    |--- interfaces
 |    |--- middlewares
 |    |--- routes
@@ -29,10 +30,13 @@ a RESTful API for a bookstore application using Node.js, Express, and TypeScript
 - Express
 - ts-node-dev
 
+## Database Schema
+
+The database schema can be found at: [Database Schema](https://dbdocs.io/hiibeekayvibe/Book-API)
+
 ## Getting Started
 
 - Edit the .env file to suit your needs
 - Run `npm run start:dev` to start the development server
 - Run `npm run start` to start the production server
 - Visit `http://localhost:3000/api/v1/greetings` to see the result
-
