@@ -1,0 +1,35 @@
+{
+  "name": "be-assessment",
+  "version": "1.0.0",
+  "description": "a RESTful API for a bookstore application using Node.js, Express, and TypeScript. The API should manage books, authors, and categories. Each book has a title, author, category, publication year, and ISBN.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/highb33kay/be-assessment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/highb33kay/be-assessment/issues"
+  },
+  "homepage": "https://github.com/highb33kay/be-assessment#readme",
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "@types/morgan": "^1.9.9",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/swagger-ui-express": "^4.1.6",
+    "express": "^4.18.3",
+    "morgan": "^1.10.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  }
+}
