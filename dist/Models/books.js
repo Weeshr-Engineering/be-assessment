@@ -27,7 +27,7 @@ const bookSchema = new mongoose_1.default.Schema({
         required: true
     },
     isbn: {
-        type: Number,
+        type: String,
         min: 10,
         max: 13,
         required: true,
@@ -43,7 +43,7 @@ function validateBook(book) {
         author: joi_1.default.array().required(),
         category: joi_1.default.array().required(),
         publicationYear: joi_1.default.date().required(),
-        isbn: joi_1.default.number().min(10).max(13).required()
+        isbn: joi_1.default.string().min(10).max(13).required()
     });
     return schema.validate(book);
 }

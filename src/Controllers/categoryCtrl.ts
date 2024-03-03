@@ -18,7 +18,7 @@ const getCategory = async (req: Request, res: Response) => {
 
     //mongoose ID validation
     if (!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(404).json({message: "No such product"})
+        return res.status(404).json({message: "Invalid ID"})
     }
     try {
         let category = await Category.findById(id)
@@ -31,11 +31,12 @@ const getCategory = async (req: Request, res: Response) => {
 
 const createCategory = async (req: Request, res: Response) => {
 
-    const { categoryName } = req.body;
-
     //Joi validation
     const { error } = validateCategory(req.body)
     if (error) return res.status(400).send(error.details[0].message);
+    
+    const { categoryName } = req.body;
+
 
     const existingCategory = await Category.findOne({ categoryName });
     if (existingCategory) return res.status(400).json({message: "Category already exists"})
@@ -58,7 +59,7 @@ const updateCategory = async (req: Request, res: Response) => {
 
     //mongoose ID validation
     if (!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(404).send("No such product")
+        return res.status(404).json({message: "Invalid ID"})
     }
     try {
         const category = await Category.findByIdAndUpdate(id, {...req.body})
@@ -75,7 +76,7 @@ const deleteCategory = async (req: Request, res: Response) => {
 
     //mongoose ID validation
     if (!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(404).send("No such product")
+        return res.status(404).json({message: "Invalid ID"})
     }
     try {
         const category = await Category.findByIdAndDelete(id, {...req.body})

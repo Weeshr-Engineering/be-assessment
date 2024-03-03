@@ -29,7 +29,7 @@ const getAuthor = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req.params;
     //mongoose ID validation
     if (!mongoose_1.default.Types.ObjectId.isValid(id)) {
-        return res.status(404).json({ message: "No such product" });
+        return res.status(404).json({ message: "Invalid ID" });
     }
     try {
         let author = yield author_1.Author.findById(id);
@@ -43,11 +43,11 @@ const getAuthor = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
 });
 exports.getAuthor = getAuthor;
 const createAuthor = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { firstName, lastName } = req.body;
     //Joi validation
     const { error } = (0, author_1.validateAuthor)(req.body);
     if (error)
         return res.status(400).send(error.details[0].message);
+    const { firstName, lastName } = req.body;
     const existingAuthor = yield author_1.Author.findOne({ firstName, lastName });
     if (existingAuthor)
         return res.status(400).json({ message: "Author already exists" });
@@ -68,7 +68,7 @@ const updateAuthor = (req, res) => __awaiter(void 0, void 0, void 0, function* (
     const { id } = req.params;
     //mongoose ID validation
     if (!mongoose_1.default.Types.ObjectId.isValid(id)) {
-        return res.status(404).send("No such product");
+        return res.status(404).json({ message: "Invalid ID" });
     }
     try {
         const author = yield author_1.Author.findByIdAndUpdate(id, Object.assign({}, req.body));
@@ -83,7 +83,7 @@ const deleteAuthor = (req, res) => __awaiter(void 0, void 0, void 0, function* (
     const { id } = req.params;
     //mongoose ID validation
     if (!mongoose_1.default.Types.ObjectId.isValid(id)) {
-        return res.status(404).send("No such product");
+        return res.status(404).json({ message: "Invalid ID" });
     }
     try {
         const author = yield author_1.Author.findByIdAndDelete(id, Object.assign({}, req.body));

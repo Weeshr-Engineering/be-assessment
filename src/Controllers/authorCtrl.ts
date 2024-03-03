@@ -18,7 +18,7 @@ const getAuthor = async (req: Request, res: Response) => {
 
     //mongoose ID validation
     if (!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(404).json({message: "No such product"})
+        return res.status(404).json({message: "Invalid ID"})
     }
     try {
         let author = await Author.findById(id)
@@ -31,11 +31,12 @@ const getAuthor = async (req: Request, res: Response) => {
 
 const createAuthor = async (req: Request, res: Response) => {
 
-    const { firstName, lastName } = req.body;
-
     //Joi validation
     const { error } = validateAuthor(req.body)
     if (error) return res.status(400).send(error.details[0].message);
+    
+    const { firstName, lastName } = req.body;
+
 
     const existingAuthor = await Author.findOne({ firstName, lastName });
     if (existingAuthor) return res.status(400).json({message: "Author already exists"})
@@ -58,7 +59,7 @@ const updateAuthor = async (req: Request, res: Response) => {
 
     //mongoose ID validation
     if (!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(404).send("No such product")
+        return res.status(404).json({message: "Invalid ID"})
     }
     try {
         const author = await Author.findByIdAndUpdate(id, {...req.body})
@@ -75,7 +76,7 @@ const deleteAuthor = async (req: Request, res: Response) => {
 
     //mongoose ID validation
     if (!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(404).send("No such product")
+        return res.status(404).json({message: "Invalid ID"})
     }
     try {
         const author = await Author.findByIdAndDelete(id, {...req.body})

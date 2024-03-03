@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import categoryRoute from './Routes/category'
 import authorRoute from './Routes/author'
+import bookRoute from './Routes/book'
 
 dotenv.config();
 
@@ -33,3 +34,4 @@ app.use((req, res, next) => {
 //Routes
 app.use('/api/category', categoryRoute)
 app.use('/api/author', authorRoute)
+app.use('/api/book', bookRoute)
