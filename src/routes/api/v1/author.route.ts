@@ -27,6 +27,13 @@ import {
 
 /**
  * @swagger
+ * tags:
+ *   name: Auth
+ *   description: API endpoints for managing authentication
+ */
+
+/**
+ * @swagger
  * components:
  *   schemas:
  *     Author:
@@ -46,6 +53,22 @@ import {
  *         bio:
  *           type: string
  *           description: The biography of the author (optional)
+ *     Auth:
+ *       type: object
+ *       required:
+ *         - email
+ *         - password
+ *       properties:
+ *         email:
+ *           type: string
+ *           format: email
+ *           description: The email address of the user
+ *           example: user@example.com
+ *         password:
+ *           type: string
+ *           format: password
+ *           description: The password of the user
+ *           example: password123
  */
 
 /**
@@ -66,10 +89,8 @@ import {
  *               items:
  *                 $ref: '#/components/schemas/Author'
  *   post:
- *     summary: Create a new author
- *     tags: [Authors]
- *     security:
- *       - bearerAuth: []
+ *     summary: Create/Register a new author
+ *     tags: [Authors, Auth]
  *     requestBody:
  *       required: true
  *       content:
@@ -166,8 +187,36 @@ router.put(
 
 router.delete("/author/:authorId", authMiddleware, deleteAuthor);
 
+/**
+ * @swagger
+ * /login:
+ *   post:
+ *     summary: Login an author
+ *     tags: [Auth]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Auth'
+ *     responses:
+ *       '200':
+ *         description: Login successful
+ *       '400':
+ *         description: Invalid credentials
+ */
 router.post("/login", validationMiddleware(loginSchema), login);
 
+/**
+ * @swagger
+ * /logout:
+ *   get:
+ *     summary: Logout an author
+ *     tags: [Auth]
+ *     responses:
+ *       '200':
+ *         description: Logout successful
+ */
 router.get("/logout", (req, res) => {
   req.destroy();
   res.redirect("/");
