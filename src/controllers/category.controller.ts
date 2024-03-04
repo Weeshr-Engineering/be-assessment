@@ -19,12 +19,10 @@ export const createCategory: RequestHandler = async (
   try {
     const { name, tags } = req.body;
 
-    const tagsString = tags.join(",");
-
     const Category = await prisma.category.create({
       data: {
         name,
-        tags: tagsString,
+        tags: tags.join(","),
       },
       select: {
         id: true,
@@ -64,7 +62,19 @@ export const getCategories: RequestHandler = async (
       throw new NotFoundError("No categories found");
     }
 
-    ResponseHandler.success(res, categories, 200, "Categories retrieved");
+    const processedCategories = categories.map((category) => {
+      return {
+        ...category,
+        tags: category.tags.split(",").map((tag) => tag.trim()),
+      };
+    });
+
+    ResponseHandler.success(
+      res,
+      processedCategories,
+      200,
+      "Categories retrieved"
+    );
   } catch (error) {
     next(error);
   }
@@ -91,7 +101,12 @@ export const getCategory: RequestHandler = async (
       throw new NotFoundError("Category not found");
     }
 
-    ResponseHandler.success(res, category, 200, "Category retrieved");
+    const processedCategory = {
+      ...category,
+      tags: category.tags.split(",").map((tag) => tag.trim()),
+    };
+
+    ResponseHandler.success(res, processedCategory, 200, "Category retrieved");
   } catch (error) {
     next(error);
   }
@@ -112,7 +127,7 @@ export const updateCategory: RequestHandler = async (
       },
       data: {
         name,
-        tags,
+        tags: tags.join(","),
       },
       select: {
         id: true,

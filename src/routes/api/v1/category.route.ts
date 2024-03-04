@@ -1,9 +1,6 @@
 import { Router } from "express";
 import { authMiddleware } from "../../../middlewares/auths";
 
-const router = Router();
-import { validationMiddleware } from "../../../middlewares/validator";
-
 import {
   categoryCreateSchema,
   categoryUpdateSchema,
@@ -16,6 +13,9 @@ import {
   updateCategory,
   deleteCategory,
 } from "../../../controllers/category.controller";
+
+const router = Router();
+import { validationMiddleware } from "../../../middlewares/validator";
 
 router.get("/categories", authMiddleware, getCategories);
 
