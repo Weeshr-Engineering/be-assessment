@@ -1,66 +1,219 @@
+# Bookstore API
 
-# Project: Bookstore API
-## Overview:
-Build a RESTful API for a bookstore application using Node.js, Express, and TypeScript. The API should manage books, authors, and categories. Each book has a title, author, category, publication year, and ISBN.
+a RESTful API for a bookstore application using Node.js, Express, and TypeScript. The API should manage books, authors, and categories. Each book has a title, author, category, publication year, and ISBN.
 
-## Requirements:
-### Setup:
+## Folder Structure
 
-- Initialize a new Node.js project using npm or yarn.
-- Use TypeScript for your project.
-#### Express Setup:
+```
+|--- logs
+|--- prisma
+|--- src
+|    |--- controllers
+|    |---
+|    |--- middlewares
+|    |    |--- validations
+|    |--- routes
+|    |    |--- api
+|    |    |    |--- v1
+|    |--- services
+|    |--- utils
+|    |--- swagger.ts
+|    |--- test
+|--- .env
+|--- .env.example
+|--- jest.config.js
+|--- .gitignore
+|--- package.json
+|--- tsconfig.json
+|--- README.md
+```
 
-Set up an Express application with appropriate middleware.
-Include middleware for JSON parsing and logging.
+## Dependencies
 
-#### Routes:
-Create routes for the following CRUD operations:
+- Node.js
+- TypeScript
+- Express
+- ts-node-dev
+- Prisma
+- Jest
+- Supertest
+- Swagger
+- Bcrypt
+- Jsonwebtoken
+- Dotenv
+- Cors
+- Morgan
 
-##### Books:
-- Create a new book.
-- Get a list of all books.
-- Get details of a specific book.
-- Update the details of a book.
-- Delete a book.
-  
-##### Authors:
-- Create a new author.
-- Get a list of all authors.
-- Get details of a specific author.
-- Update the details of an author.
-- Delete an author.
-  
-##### Categories:
-- Create a new category.
-- Get a list of all categories.
-- Get details of a specific category.
-- Update the details of a category.
-- Delete a category.
+## Database Schema
 
-#### Data Storage:
-- Use an in-memory array or a simple database (e.g., MongoDB or MySQL) to store books, authors, and categories.
-- Implement appropriate relationships between books, authors, and categories.
+The database schema can be found at: [Database Schema](https://dbdocs.io/hiibeekayvibe/Book-API)
 
-#### Validation:
-- Validate the input data for creating and updating books, authors, and categories.
-- Include appropriate error handling and return meaningful error messages.
+## Getting Started
 
-#### Testing:
-Write unit tests for at least two routes using a testing framework of your choice (Jest, Mocha, etc.).
+- Edit the .example.env file with app credentials and rename it to .env
+- Run `npm run start:dev` to start the development server
+- Run `npm test` to run the tests
+- Visit `https://be-assessment.onrender.com/api/v1/greetings` to see the result
 
-#### Documentation:
-- Provide clear documentation on how to run your application and tests.
-- Include a brief overview of the project structure and any important design decisions.
-- Use Postman to document your endpoints
+## API Endpoints Documentation
 
-#### Bonus Points:
-- Implement sorting and filtering options for the list of books, authors, and categories.
-- Add pagination for the list endpoints.
-- Include user authentication middleware.
+- Swagger Api Documentation can be found at: [API Documentation](https://https://be-assessment.onrender.com/api-docs/)
 
-#### Submission Guidelines:
-- Fork this repository and commit your code.
-- Include a README.md file with instructions on how to run the application and tests.
-- Create a pull request with your completed assessment.
+- PostMan Documentation can be found at: [PostMan Documentation](https://documenter.getpostman.com/view/28437007/2sA2xcaF4L)
 
+### Base URL
 
+All endpoints are prefixed with `https://be-assessment.onrender.com/api/v1/`.
+
+### Categories
+
+#### `GET /categories`
+
+- **Description:** Retrieve all categories.
+- **Security:** Requires bearer authentication.
+- **Responses:**
+  - `200`: A list of categories.
+
+#### `GET /category/{categoryId}`
+
+- **Description:** Get a category by ID.
+- **Security:** Requires bearer authentication.
+- **Parameters:** `categoryId` - ID of the category to retrieve.
+- **Responses:**
+  - `200`: Category found.
+  - `404`: Category not found.
+
+#### `POST /category/`
+
+- **Description:** Create a new category.
+- **Security:** Requires bearer authentication.
+- **Body:** Category object.
+- **Responses:**
+  - `201`: Category created successfully.
+  - `400`: Bad request, invalid data supplied.
+
+#### `PUT /category/{categoryId}`
+
+- **Description:** Update a category by ID.
+- **Security:** Requires bearer authentication.
+- **Parameters:** `categoryId` - ID of the category to update.
+- **Body:** Updated Category object.
+- **Responses:**
+  - `200`: Category updated successfully.
+  - `404`: Category not found.
+
+#### `DELETE /category/{categoryId}`
+
+- **Description:** Delete a category by ID.
+- **Security:** Requires bearer authentication.
+- **Parameters:** `categoryId` - ID of the category to delete.
+- **Responses:**
+  - `204`: Category deleted successfully.
+  - `404`: Category not found.
+
+### Books
+
+#### `GET /books`
+
+- **Description:** Retrieve all books.
+- **Security:** Requires bearer authentication.
+- **Responses:**
+  - `200`: A list of books.
+
+#### `GET /book/{bookId}`
+
+- **Description:** Get a book by ID.
+- **Security:** Requires bearer authentication.
+- **Parameters:** `bookId` - ID of the book to retrieve.
+- **Responses:**
+  - `200`: Book found.
+  - `404`: Book not found.
+
+#### `POST /book/`
+
+- **Description:** Create a new book.
+- **Security:** Requires bearer authentication.
+- **Body:** Book object.
+- **Responses:**
+  - `201`: Book created successfully.
+  - `400`: Bad request, invalid data supplied.
+
+#### `PUT /book/{bookId}`
+
+- **Description:** Update a book by ID.
+- **Security:** Requires bearer authentication.
+- **Parameters:** `bookId` - ID of the book to update.
+- **Body:** Updated Book object.
+- **Responses:**
+  - `200`: Book updated successfully.
+  - `404`: Book not found.
+
+#### `DELETE /book/{bookId}`
+
+- **Description:** Delete a book by ID.
+- **Security:** Requires bearer authentication.
+- **Parameters:** `bookId` - ID of the book to delete.
+- **Responses:**
+  - `204`: Book deleted successfully.
+  - `404`: Book not found.
+
+### Authors
+
+#### `GET /authors/`
+
+- **Description:** Retrieve all authors.
+- **Security:** Requires bearer authentication.
+- **Responses:**
+  - `200`: A list of authors.
+
+#### `GET /author/{authorId}`
+
+- **Description:** Get an author by ID.
+- **Security:** Requires bearer authentication.
+- **Parameters:** `authorId` - ID of the author to retrieve.
+- **Responses:**
+  - `200`: Author found.
+  - `404`: Author not found.
+
+#### `POST /register`
+
+- **Description:** Create/Register a new author.
+- **Body:** Author object.
+- **Responses:**
+  - `201`: Author created successfully.
+  - `400`: Bad request, invalid data supplied.
+
+#### `PUT /author/{authorId}`
+
+- **Description:** Update an author by ID.
+- **Security:** Requires bearer authentication.
+- **Parameters:** `authorId` - ID of the author to update.
+- **Body:** Updated Author object.
+- **Responses:**
+  - `200`: Author updated successfully.
+  - `404`: Author not found.
+
+#### `DELETE /author/{authorId}`
+
+- **Description:** Delete an author by ID.
+- **Security:** Requires bearer authentication.
+- **Parameters:** `authorId` - ID of the author to delete.
+- **Responses:**
+  - `204`: Author deleted successfully.
+  - `404`: Author not found.
+
+### Authentication
+
+#### `POST /login`
+
+- **Description:** Login an author.
+- **Body:** Credentials object.
+- **Responses:**
+  - `200`: Login successful.
+  - `400`: Invalid credentials.
+
+#### `GET /logout`
+
+- **Description:** Logout an author.
+- **Responses:**
+  - `200`: Logout successful.
