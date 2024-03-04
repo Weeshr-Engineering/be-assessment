@@ -20,20 +20,20 @@ import {
 
 import { validationMiddleware } from "../../../middlewares/validator";
 
-router.get("/", authMiddleware, getAuthors);
-router.get("/:authorId", authMiddleware, getAuthor);
+router.get("/authors/", authMiddleware, getAuthors);
+router.get("/author/:authorId", authMiddleware, getAuthor);
 router.post(
   "/register",
   validationMiddleware(authorCreateSchema),
   createAuthor
 );
 router.put(
-  "/:authorId",
+  "/author/:authorId",
   authMiddleware,
   validationMiddleware(authorUpdateSchema),
   updateAuthor
 );
-router.delete("/:authorId", authMiddleware, deleteAuthor);
+router.delete("/author/:authorId", authMiddleware, deleteAuthor);
 
 router.post("/login", validationMiddleware(loginSchema), login);
 

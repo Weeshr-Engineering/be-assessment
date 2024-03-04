@@ -1,12 +1,19 @@
 import { z } from "zod";
 
-const BookSchema = z.object({
+const bookCreateSchema = z.object({
   title: z.string(),
-  author: z.number().int(),
   authorId: z.number().int(),
-  publication_year: z.date().optional(),
-  isbn: z.number().int(),
+  publication_year: z.string().optional(),
+  isbn: z.string(),
   categoryId: z.number().int(),
 });
 
-export { BookSchema };
+const bookUpdateSchema = z.object({
+  title: z.string().optional(),
+  authorId: z.number().int().optional(),
+  publication_year: z.string().optional(),
+  isbn: z.string().optional(),
+  categoryId: z.number().int().optional(),
+});
+
+export { bookCreateSchema, bookUpdateSchema };

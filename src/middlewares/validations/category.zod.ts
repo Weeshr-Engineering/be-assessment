@@ -1,8 +1,13 @@
 import { z } from "zod";
 
-const CategorySchema = z.object({
+const categoryCreateSchema = z.object({
   name: z.string(),
   tags: z.array(z.string()),
 });
 
-export { CategorySchema };
+const categoryUpdateSchema = z.object({
+  name: z.string().optional(),
+  tags: z.array(z.string()).optional(),
+});
+
+export { categoryCreateSchema, categoryUpdateSchema };
