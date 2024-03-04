@@ -57,7 +57,9 @@ The database schema can be found at: [Database Schema](https://dbdocs.io/hiibeek
 
 ## API Endpoints Documentation
 
-Api Documentation can be found at: [API Documentation](https://https://be-assessment.onrender.com/api-docs/)
+- Swagger Api Documentation can be found at: [API Documentation](https://https://be-assessment.onrender.com/api-docs/)
+
+- PostMan Documentation can be found at: [PostMan Documentation](https://documenter.getpostman.com/view/28437007/2sA2xcaF4L)
 
 ### Base URL
 
