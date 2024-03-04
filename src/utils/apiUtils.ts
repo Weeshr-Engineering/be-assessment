@@ -10,7 +10,7 @@ export const registerApiRoutes = (version, app) => {
     } else {
       app.use(
         `/api/${version}/`,
-        authMiddleware(), // Invoke authMiddleware to execute the middleware function
+        authMiddleware,
         require(`../routes/api/${version}/${path}`)
       );
     }

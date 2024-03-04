@@ -1,10 +1,4 @@
-import {
-  Request,
-  Response,
-  NextFunction,
-  RequestHandler,
-  response,
-} from "express";
+import { Request, Response, NextFunction, RequestHandler } from "express";
 
 import prisma from "../utils/prisma";
 
@@ -138,11 +132,13 @@ export const getAuthor: RequestHandler = async (
   next: NextFunction
 ) => {
   try {
-    const { id } = req.params;
+    const { authorId } = req.params;
+
+    console.log(authorId);
 
     const author = await prisma.author.findUnique({
       where: {
-        id: parseInt(id),
+        id: parseInt(authorId),
       },
       select: {
         id: true,
@@ -170,12 +166,12 @@ export const updateAuthor: RequestHandler = async (
   next: NextFunction
 ) => {
   try {
-    const { id } = req.params;
+    const { authorId } = req.params;
     const { email, fullname, bio } = req.body;
 
     const author = await prisma.author.update({
       where: {
-        id: parseInt(id),
+        id: parseInt(authorId),
       },
       data: {
         email,

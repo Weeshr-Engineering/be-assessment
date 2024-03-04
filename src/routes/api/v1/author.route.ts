@@ -13,22 +13,27 @@ import { authMiddleware } from "../../../middlewares/auths";
 const router = Router();
 
 import {
-  authorSchema,
+  authorCreateSchema,
+  authorUpdateSchema,
   loginSchema,
 } from "../../../middlewares/validations/author.zod";
 
 import { validationMiddleware } from "../../../middlewares/validator";
 
 router.get("/", authMiddleware, getAuthors);
-router.get("/:id", authMiddleware, getAuthor);
-router.post("/", validationMiddleware(authorSchema), createAuthor);
+router.get("/:authorId", authMiddleware, getAuthor);
+router.post(
+  "/register",
+  validationMiddleware(authorCreateSchema),
+  createAuthor
+);
 router.put(
-  "/:id",
+  "/:authorId",
   authMiddleware,
-  validationMiddleware(authorSchema),
+  validationMiddleware(authorUpdateSchema),
   updateAuthor
 );
-router.delete("/:id", authMiddleware, deleteAuthor);
+router.delete("/:authorId", authMiddleware, deleteAuthor);
 
 router.post("/login", validationMiddleware(loginSchema), login);
 
