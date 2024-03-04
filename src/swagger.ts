@@ -10,11 +10,11 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:3000",
+        url: "http://localhost:3000/api/v1",
         description: "Local server",
       },
       {
-        url: "https://be-assessment.onrender.com",
+        url: "https://be-assessment.onrender.com/api/v1",
         description: "Live server",
       },
     ],

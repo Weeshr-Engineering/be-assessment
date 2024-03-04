@@ -88,21 +88,6 @@ const router = Router();
  *               type: array
  *               items:
  *                 $ref: '#/components/schemas/Author'
- *   post:
- *     summary: Create/Register a new author
- *     tags: [Authors, Auth]
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             $ref: '#/components/schemas/Author'
- *     responses:
- *       '201':
- *         description: Author created successfully
- *       '400':
- *         description: Bad request, invalid data supplied
- *
  * /authors/{authorId}:
  *   get:
  *     summary: Get an author by ID
@@ -170,6 +155,25 @@ const router = Router();
 router.get("/authors/", authMiddleware, getAuthors);
 
 router.get("/author/:authorId", authMiddleware, getAuthor);
+
+/**
+ * @swagger
+ * /register:
+ *   post:
+ *     summary: Create/Register a new author
+ *     tags: [Authors, Auth]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Author'
+ *     responses:
+ *       '201':
+ *         description: Author created successfully
+ *       '400':
+ *         description: Bad request, invalid data supplied
+ */
 router.post(
   "/register",
   validationMiddleware(authorCreateSchema),
