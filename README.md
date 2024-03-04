@@ -50,18 +50,18 @@ The database schema can be found at: [Database Schema](https://dbdocs.io/hiibeek
 
 ## Getting Started
 
-- Edit the .env file to suit your needs
+- Edit the .example.env file with app credentials and rename it to .env
 - Run `npm run start:dev` to start the development server
-- Run `npm run start` to start the production server
-- Visit `http://localhost:3000/api/v1/greetings` to see the result
+- Run `npm test` to run the tests
+- Visit `https://be-assessment.onrender.com/api/v1/greetings` to see the result
 
 ## API Endpoints Documentation
 
-Api Documentation can be found at: [API Documentation](https:///api-docs/)
+Api Documentation can be found at: [API Documentation](https://https://be-assessment.onrender.com/api-docs/)
 
 ### Base URL
 
-All endpoints are prefixed with `/api/v1/`.
+All endpoints are prefixed with `https://be-assessment.onrender.com/api/v1/`.
 
 ### Categories
 

@@ -48,7 +48,6 @@ async function deleteDummyAuthor(dummyAuthor) {
 }
 
 describe("Authors API", () => {
-  // Dynamically obtain a token before running tests
   beforeAll(async () => {
     token = await obtainToken();
   });

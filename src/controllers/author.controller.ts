@@ -50,6 +50,10 @@ export const createAuthor: RequestHandler = async (
       },
     });
 
+    if (!author) {
+      throw new InternalServerError("An error occurred while creating author");
+    }
+
     ResponseHandler.success(res, author, 201, "Author created successfully");
   } catch (error) {
     next(error);
@@ -84,6 +88,10 @@ export const login: RequestHandler = async (
       expiresIn: "1d",
     });
 
+    if (!token) {
+      throw new InternalServerError("An error occurred while creating token");
+    }
+
     const userRes = {
       id: user.id,
       email: user.email,
@@ -114,6 +122,10 @@ export const getAuthors: RequestHandler = async (
         updated_at: true,
       },
     });
+
+    if (!authors) {
+      throw new NotFoundError("Authors not found");
+    }
 
     ResponseHandler.success(
       res,
@@ -187,7 +199,7 @@ export const updateAuthor: RequestHandler = async (
     });
 
     if (!author) {
-      throw new NotFoundError("Author not found");
+      throw new InternalServerError("An error occurred while updating author");
     }
 
     ResponseHandler.success(res, author, 200, "Author updated successfully");
@@ -216,6 +228,10 @@ export const deleteAuthor: RequestHandler = async (
         Book: true,
       },
     });
+
+    if (!author) {
+      throw new InternalServerError("An error occurred while deleting author");
+    }
 
     ResponseHandler.success(res, author, 204, "Author deleted successfully");
   } catch (error) {
