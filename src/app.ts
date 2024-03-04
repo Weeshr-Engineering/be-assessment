@@ -7,6 +7,7 @@ const swaggerOptions = require("./swagger");
 import { errorHandler } from "./middlewares/errorhandler";
 import cookieParser from "cookie-parser";
 import { readdirSync } from "fs";
+import { morganMiddleware } from "./middlewares/accesslogger";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -15,7 +16,8 @@ app.use(express.json());
 
 app.use(cookieParser());
 
-app.use(morgan("dev"));
+// app.use(morgan("dev"));
+app.use(morganMiddleware);
 
 //  Swagger UI
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerOptions));

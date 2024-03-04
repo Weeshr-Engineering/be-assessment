@@ -5,22 +5,27 @@ a RESTful API for a bookstore application using Node.js, Express, and TypeScript
 ## Folder Structure
 
 ```
+|--- logs
 |--- prisma
 |--- src
 |    |--- controllers
 |    |---
-|    |--- interfaces
 |    |--- middlewares
+|    |    |--- validations
 |    |--- routes
+|    |    |--- api
+|    |    |    |--- v1
 |    |--- services
 |    |--- utils
 |    |--- swagger.ts
-|    |--- server.ts
+|    |--- test
 |--- .env
-|--- app.ts
+|--- .env.example
+|--- jest.config.js
 |--- .gitignore
 |--- package.json
 |--- tsconfig.json
+|--- README.md
 ```
 
 ## Dependencies
@@ -29,6 +34,15 @@ a RESTful API for a bookstore application using Node.js, Express, and TypeScript
 - TypeScript
 - Express
 - ts-node-dev
+- Prisma
+- Jest
+- Supertest
+- Swagger
+- Bcrypt
+- Jsonwebtoken
+- Dotenv
+- Cors
+- Morgan
 
 ## Database Schema
 
