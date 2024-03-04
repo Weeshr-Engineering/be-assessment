@@ -1,5 +1,8 @@
 import { Request, Response, NextFunction } from "express";
 
+import fs from "fs";
+import path from "path";
+
 class CustomError extends Error {
   statusCode: number;
 
@@ -37,7 +40,25 @@ const errorHandler = (
   res: Response,
   next: NextFunction
 ) => {
-  console.error("An error occurred:", err);
+  // Define the log message
+  const logMessage = `${new Date().toISOString()} - Error: ${
+    err.name
+  } - Message: ${err.message} - Status: ${err.statusCode} - Path: ${
+    req.path
+  }\n`;
+
+  const logsDir = path.resolve(__dirname, "..", "..", "logs");
+  const logFilePath = path.join(logsDir, "error.log");
+
+  if (!fs.existsSync(logsDir)) {
+    fs.mkdirSync(logsDir, { recursive: true });
+  }
+
+  fs.appendFile(logFilePath, logMessage, (error) => {
+    if (error) {
+      console.error("Failed to write error to log file:", error);
+    }
+  });
 
   if (res.headersSent) {
     return next(err);

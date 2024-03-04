@@ -134,8 +134,6 @@ export const getAuthor: RequestHandler = async (
   try {
     const { authorId } = req.params;
 
-    console.log(authorId);
-
     const author = await prisma.author.findUnique({
       where: {
         id: parseInt(authorId),
@@ -204,22 +202,22 @@ export const deleteAuthor: RequestHandler = async (
   next: NextFunction
 ) => {
   try {
-    const { id } = req.params;
+    const { authorId } = req.params;
 
-    if (!id) {
+    if (!authorId) {
       throw new BadRequestError("Author id is required");
     }
 
     const author = await prisma.author.delete({
       where: {
-        id: parseInt(id),
+        id: parseInt(authorId),
       },
       include: {
         Book: true,
       },
     });
 
-    ResponseHandler.success(res, author, 200, "Author deleted successfully");
+    ResponseHandler.success(res, author, 204, "Author deleted successfully");
   } catch (error) {
     next(error);
   }
