@@ -9,8 +9,7 @@ import {
 } from "../../../controllers/author.controller";
 
 import { authMiddleware } from "../../../middlewares/auths";
-
-const router = Router();
+import { validationMiddleware } from "../../../middlewares/validator";
 
 import {
   authorCreateSchema,
@@ -18,6 +17,7 @@ import {
   loginSchema,
 } from "../../../middlewares/validations/author.zod";
 
+const router = Router();
 /**
  * @swagger
  * tags:
@@ -166,8 +166,6 @@ import {
  *       '404':
  *         description: Author not found
  */
-
-import { validationMiddleware } from "../../../middlewares/validator";
 
 router.get("/authors/", authMiddleware, getAuthors);
 
