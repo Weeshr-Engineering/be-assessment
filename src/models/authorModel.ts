@@ -5,6 +5,8 @@ export interface Author extends Document {
   email: string;
   password: string;
   bio?: string;
+  confirmPassword?: string;
+  refreshToken?:string;
 }
 
 const authorSchema: Schema<Author> = new Schema<Author>(
@@ -34,6 +36,9 @@ const authorSchema: Schema<Author> = new Schema<Author>(
     bio: {
       type: String,
     },
+    refreshToken : {
+        type: String,
+    }
   },
   { timestamps: true }
 );

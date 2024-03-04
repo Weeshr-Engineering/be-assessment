@@ -1,4 +1,5 @@
 import express , { Router} from "express";
+import { createBook , getallBooks , getBookById , updateBookById, deleteBookById } from "../controllers/bookController";
 
 const router : Router = express.Router();
 
@@ -10,10 +11,10 @@ const router : Router = express.Router();
  ** Delete a book.
  */
 
-router.post("/create")
-router.get("all")
-router.get("/:bookId")
-router.put("/update/:bookId")
-router.delete("/delete/:bookId")
+router.post("/create" , createBook)
+router.get("all" ,getallBooks)
+router.get("/:bookId" ,getBookById)
+router.put("/update/:bookId" ,updateBookById )
+router.delete("/delete/:bookId" , deleteBookById)
 
 export default router ;
