@@ -18,9 +18,11 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const getBooks = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const books = yield books_1.Book.find().populate(['author', 'category']);
+        console.log(books);
         res.status(200).send(books);
     }
     catch (error) {
+        console.log(error);
         res.status(500).json({ message: "Error retrieving Books" });
     }
 });

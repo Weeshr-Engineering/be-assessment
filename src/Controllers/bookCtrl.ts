@@ -6,8 +6,10 @@ import mongoose from 'mongoose';
 const getBooks = async (req: Request, res: Response) => {
     try {
         const books = await Book.find().populate(['author', 'category']);
+        console.log(books)
         res.status(200).send(books);
     } catch (error) {
+        console.log(error)
         res.status(500).json({message:"Error retrieving Books"});
     }
 }
