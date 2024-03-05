@@ -1,17 +1,21 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import cookieParser from 'cookie-parser'
 import categoryRoute from './Routes/category'
 import authorRoute from './Routes/author'
 import bookRoute from './Routes/book'
+import userRoute from './Routes/users'
+import { requireAuth } from './Middleware/auth';
 
 dotenv.config();
 
+const JWT_KEY: string = process.env.JWT_KEY || '';
 
 const app = express();
 app.use(express.json())
-
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser(JWT_KEY))
 
 //Connecting to database
 const MONGO_URI: string = process.env.MONGO_URI || '';
@@ -32,6 +36,7 @@ app.use((req, res, next) => {
 
 
 //Routes
-app.use('/api/category', categoryRoute)
-app.use('/api/author', authorRoute)
-app.use('/api/book', bookRoute)
+app.use('/api/category', requireAuth, categoryRoute)
+app.use('/api/author', requireAuth, authorRoute)
+app.use('/api/book', requireAuth, bookRoute)
+app.use('/api/user', userRoute)
