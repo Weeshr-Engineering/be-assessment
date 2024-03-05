@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family:'Roboto Condensed', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+    background-image: url('/images/rbk.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .form-container {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fff;
+    width: 500px;
+    box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.4);
+  }
+  
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: flex;
+    margin-bottom: 5px;
+    margin-left: 5px;
+  }
+  
+  input[type="email"],
+  input[type="password"],
+  input[type="text"]{
+    width: calc(100% - 12px);
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    height: 35px;
+  }
+  
+  input[type="email"]:focus,
+  input[type="password"]:focus,
+  input[type="text"]:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  .button-group {
+    display: block;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100px;
+    font-size: 16px;
+  }
+  
+  .save-btn {
+    background-color: #28a745;
+    color: #fff;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+  
+  .login {
+    margin-top: 20px;
+    color: #000000;
+    font-family:'Roboto Condensed', sans-serif;
+    font-size: 16px;
+  }
+
+  .login a {
+    margin-top: 70px;
+    color: #000000;
+    /* text-decoration: none; */
+    font-family:'Roboto Condensed', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .save-btn:hover,
+  .clear-btn:hover {
+    filter: brightness(90%);
+    transform: scale(1.05);
+    transition: transform 0.1s ease-in-out;
+  }
+  
+  

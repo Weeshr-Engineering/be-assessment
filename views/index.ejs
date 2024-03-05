@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <h1>Welcome To The Book Library</h1>
+        <form action="/user/login" method="post">
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+          </div>
+          <div class="button-group">
+            <button type="submit" class="save-btn">Login</button>
+            <!-- <button type="button" class="clear-btn" onclick="clearForm()">Clear</button> -->
+          </div>
+          <div class="button-group">
+            <a href="/user/register"><button type="submit" class="signup-btn">Sign-up</button></a>
+            <a href="/layout"><button type="submit" class="books">View Books</button></a>
+            <!-- <button type="button" class="clear-btn" onclick="clearForm()">Clear</button> -->
+          </div>
+        </form>
+        <!-- <a href="/user/register"><button type="submit" class="signup-btn">Sign-up</button></a>
+        <a href="/layout"><button type="submit" class="books">View Books</button></a> -->
+      </div>
+    </div>
+
+  </body>
+</html>

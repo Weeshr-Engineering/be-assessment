@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/register.css' />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <h1>Sign-up</h1>
+        <form action="/user/register" method="post">
+          <div class="form-group">
+            <label for="authorName">Author Name:</label>
+            <input type="text" id="authorName" name="authorName" placeholder="AuthorName" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" placeholder="PhoneNumber" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+          </div>
+          <div class="button-group">
+            <button type="submit" class="save-btn">Save</button>
+            <!-- <button type="button" class="clear-btn" onclick="clearForm()">Clear</button> -->
+          </div>
+        </form>
+        <div class="login">
+          <p>Already have an account?</p> 
+          <a href="/">Login</a>
+      </div>
+    </div>
+
+  </body>
+</html>
