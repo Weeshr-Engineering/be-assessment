@@ -5,28 +5,28 @@ const bookSchema = new Schema({
       type: String,
       required: true
     },
-    author: {
-      // Reference
-      type: String
-    },
+    author: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Author',
+      required: true,
+    }],
     description: {
       type: String
     },
-    category: {
-      // Reference
-      type: String
-    },
-    purchaseCount: {
-      type: Number
-    },
+    category: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Category',
+      required: true,
+    }],
     publicationYear: {
       type: Number
     },
     isbn: {
-      type: String
+      type: String,
+      max: 13,
+      required: true,
+      unique: true,
     }
 })
 
-const Book = model('book', bookSchema)
-
-export { Book }
+export const Book = model('book', bookSchema)

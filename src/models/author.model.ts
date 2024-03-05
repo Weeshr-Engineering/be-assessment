@@ -14,6 +14,10 @@ const authorSchema = new Schema({
     },
 })
 
-const Author = model('author', authorSchema)
+export interface authorInterface {
+  firstName: string,
+  lastName: string,
+  middleName: string,
+}
 
-export { Author }
+export const Author = model('author', authorSchema);

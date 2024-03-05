@@ -1,13 +1,30 @@
-import { Author } from "../models/author.model";
+import { NotFoundError } from "../middlewares/error";
+import { Author, authorInterface } from "../models/author.model";
 
 export class AuthorService {
-  async create() {}
+  static async create(data: authorInterface) {
+    return await Author.create(data);
+  }
 
-  async getAll() {}
+  static async getAll() {
+    return await Author.find();
+  }
 
-  async getSingle() {}
+  static async getSingle(id: string) {
+    if (!(await Author.findOne({ id }))) throw new NotFoundError("Author Not Found");
 
-  async update() {}
+    return await Author.findOne({ id });
+  }
 
-  async delete() {}
+  static async update(id: string, data: authorInterface) {
+    if (!(await Author.findOne({ id }))) throw new NotFoundError("Author Not Found");
+
+    return await Author.findOneAndUpdate({ id }, data);
+  }
+
+  static async delete(id: string) {
+    if (!(await Author.findOne({ id }))) throw new NotFoundError("Author Not Found");
+
+    return await Author.findOneAndDelete({ id });
+  }
 }
