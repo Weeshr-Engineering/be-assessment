@@ -4,12 +4,23 @@ import mongoose from 'mongoose';
 
 
 const getBooks = async (req: Request, res: Response) => {
+    const page = parseInt(req.query.page as string) || 1; 
+    const limit = parseInt(req.query.limit as string) || 10;
     try {
-        const books = await Book.find().populate(['author', 'category']);
-        console.log(books)
-        res.status(200).send(books);
+
+        const totalBooks = await Book.countDocuments();
+        const totalPages = Math.ceil(totalBooks / limit);
+
+        const books = await Book.find()
+        .populate(['author', 'category'])
+        .skip((page - 1) * limit) 
+        .limit(limit);
+        res.status(200).json({
+            books,
+            currentPage: page,
+            totalPages
+        });
     } catch (error) {
-        console.log(error)
         res.status(500).json({message:"Error retrieving Books"});
     }
 }

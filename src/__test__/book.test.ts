@@ -42,17 +42,15 @@ describe('book', () => {
     describe('get book route', () => {
         describe('given the book does exist', () => {
             it('should return a 200 status and the book', async () => {
-                // Create the book in the database and obtain its _id
+                
                 const createdBook = await Book.create(bookPayload);
                 const bookId = createdBook._id;
     
-                // Make a request to the route to retrieve the book
                 const response = await supertest(app).get(`/api/book/${bookId}`);
     
-                // Verify the response status code
-                // expect(response.status).toBe(200);
+                expect(response.status).toBe(200);
     
-                // Verify the returned book matches the expected book
+                
                 expect(response.body.title).toBe(bookPayload.title);
                 expect(response.body.author).toEqual(expect.arrayContaining(bookPayload.author));
                 expect(response.body.category).toEqual(expect.arrayContaining(bookPayload.category));

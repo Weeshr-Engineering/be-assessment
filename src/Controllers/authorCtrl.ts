@@ -4,13 +4,27 @@ import mongoose from 'mongoose';
 
 
 const getAuthors = async (req: Request, res: Response) => {
+    const page = parseInt(req.query.page as string) || 1;
+    const limit = parseInt(req.query.limit as string) || 10; 
+
     try {
-        const authors = await Author.find();
-        res.status(200).send(authors);
+        const totalAuthors = await Author.countDocuments();
+        const totalPages = Math.ceil(totalAuthors / limit);
+
+        const authors = await Author.find()
+            .skip((page - 1) * limit)
+            .limit(limit);
+
+        res.status(200).json({
+            authors,
+            totalPages,
+            currentPage: page
+        });
     } catch (error) {
-        res.status(500).json({message:"Error retrieving Authors"});
+        res.status(500).json({ message: "Error retrieving Authors" });
     }
 }
+
 
 const getAuthor = async (req: Request, res: Response) => {
 

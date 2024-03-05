@@ -4,13 +4,26 @@ import mongoose from 'mongoose';
 
 
 const getCategories = async (req: Request, res: Response) => {
+    const page = parseInt(req.query.page as string) || 1;
+    const limit = parseInt(req.query.limit as string) || 10; 
     try {
-        const categories = await Category.find();
-        res.status(200).send(categories);
+        const totalCategories = await Category.countDocuments();
+        const totalPages = Math.ceil(totalCategories / limit);
+
+        const categories = await Category.find()
+            .skip((page - 1) * limit)
+            .limit(limit);
+
+        res.status(200).json({
+            categories,
+            totalPages,
+            currentPage: page
+        });
     } catch (error) {
-        res.status(500).json({message:"Error retrieving categories"});
+        res.status(500).json({ message: "Error retrieving categories" });
     }
 }
+
 
 const getCategory = async (req: Request, res: Response) => {
 
