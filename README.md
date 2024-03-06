@@ -1,66 +1,82 @@
+## Description
 
-# Project: Bookstore API
-## Overview:
-Build a RESTful API for a bookstore application using Node.js, Express, and TypeScript. The API should manage books, authors, and categories. Each book has a title, author, category, publication year, and ISBN.
+This is a Bookstore app (backend) that assist bookstore owners keep record of books including their authors and the 
+category each book belongs to. The app is developed with **NestJS** with **Prisma** for database mapping.The app requires that bookstore owner signup by providing basic details like `firstName`,
+`lastName`, `email` and `password`. There is a signin page that allow user to sign in on the app.
 
-## Requirements:
-### Setup:
+After signing up, the user can create new book category, author and add books based on created categories and authors.
 
-- Initialize a new Node.js project using npm or yarn.
-- Use TypeScript for your project.
-#### Express Setup:
+## Installation
 
-Set up an Express application with appropriate middleware.
-Include middleware for JSON parsing and logging.
+1. Clone this repository:
+   ```bash
+   $ git clone https://github.com/Daud94/be-assessment.git
+   ```
+2. Navigate into the project directory:
 
-#### Routes:
-Create routes for the following CRUD operations:
+   ```bash
+   $ cd quiz-app-backend
+   ```
+   
+3. Checkout to dev branch
+    ```
+   $ git checkout dev
+   ```
+4. Install dependencies
 
-##### Books:
-- Create a new book.
-- Get a list of all books.
-- Get details of a specific book.
-- Update the details of a book.
-- Delete a book.
-  
-##### Authors:
-- Create a new author.
-- Get a list of all authors.
-- Get details of a specific author.
-- Update the details of an author.
-- Delete an author.
-  
-##### Categories:
-- Create a new category.
-- Get a list of all categories.
-- Get details of a specific category.
-- Update the details of a category.
-- Delete a category.
+   ```bash
+   $ npm install
+   ```
 
-#### Data Storage:
-- Use an in-memory array or a simple database (e.g., MongoDB or MySQL) to store books, authors, and categories.
-- Implement appropriate relationships between books, authors, and categories.
+## Database Configuration
 
-#### Validation:
-- Validate the input data for creating and updating books, authors, and categories.
-- Include appropriate error handling and return meaningful error messages.
+The application is configured to use in-memory DBMS (sqlite). It can also be configured to use other DBMS by specifying in the
+`schema.prisma` located in the `prisma` folder in the project root the following values:
+```angular2html
+  provider = "postgresql"  
+  url      = env("DATABASE_URL")
+```
 
-#### Testing:
-Write unit tests for at least two routes using a testing framework of your choice (Jest, Mocha, etc.).
+`Provider` can be `postgresql` or `mysql` or any other as specified in [Prisma documentation](https://www.prisma.io/docs/orm/overview/databases).
 
-#### Documentation:
-- Provide clear documentation on how to run your application and tests.
-- Include a brief overview of the project structure and any important design decisions.
-- Use Postman to document your endpoints
+Ensure you have created .env file in the project root folder; Create `DATABASE_URL` variable and assign your database url to it. Read Prisma [documentation](https://www.prisma.io/docs/orm/overview/databases) on how to connect to a database.
+Since this app makes use of sqlite, you don't need to carry out any configuration. Simply run the commands below:
+```
+    $ npx prisma migrate dev
+```
 
-#### Bonus Points:
-- Implement sorting and filtering options for the list of books, authors, and categories.
-- Add pagination for the list endpoints.
-- Include user authentication middleware.
+## Environment Variables
 
-#### Submission Guidelines:
-- Fork this repository and commit your code.
-- Include a README.md file with instructions on how to run the application and tests.
-- Create a pull request with your completed assessment.
+onfigure the application using environment variables. Create a `.env` file in the root of the project and define the
+following variables:
+
+```
+    SALT_OR_ROUNDS=
+    JWT_SECRET=
+```
+
+## Running the app
+
+```bash
+    # development
+    $ npm run start
+    
+    # watch mode
+    $ npm run start:dev
+    
+    # production mode
+    $ npm run start:prod
+````
+
+## API Documentation
+
+The API documentation `Quiz App.postman_collection.json` for this can be found in the root project directory. It should be
+imported into Postman to test all API endpoints. Each endpoint comes with a sample request and response.
+
+## Testing
+
+Testing is done to test `Signup` and `Signin` of user. Test file can be found in `auth.controller.spec.ts` in auth directory.
+
+
 
 
