@@ -7,13 +7,6 @@ import { faker } from "@faker-js/faker";
 let createdAuthorId;
 
 describe("Authors API", () => {
-  it("Get /authors - It can get all Authors", async () => {
-    const result = await request(app)
-      .get("/api/v1/authors/")
-    expect(result.statusCode).toEqual(200);
-    expect(result.body).toBeInstanceOf(Object);
-  });
-
   it("Post /authors - It can register an Author", async () => {
     const newAuthor = {
       firstName: faker.person.firstName(),
@@ -23,6 +16,13 @@ describe("Authors API", () => {
     const result = await request(app).post("/api/v1/authors/").send(newAuthor);
     expect(result.statusCode).toEqual(201);
     createdAuthorId = result.body.data.id;
+  });
+
+  it("Get /authors - It can get all Authors", async () => {
+    const result = await request(app)
+      .get("/api/v1/authors/")
+    expect(result.statusCode).toEqual(200);
+    expect(result.body).toBeInstanceOf(Object);
   });
 
   it("Get /author/:id - It can get an Author by ID", async () => {
