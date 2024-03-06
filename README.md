@@ -1,66 +1,56 @@
+### Bookstore
 
-# Project: Bookstore API
-## Overview:
-Build a RESTful API for a bookstore application using Node.js, Express, and TypeScript. The API should manage books, authors, and categories. Each book has a title, author, category, publication year, and ISBN.
+This is a bookstore api. The api is built using Node's Expressjs framework using TypeScript for static typing. The api connects data to a MongoDB Atlas instance.
 
-## Requirements:
-### Setup:
+## Books route
 
-- Initialize a new Node.js project using npm or yarn.
-- Use TypeScript for your project.
-#### Express Setup:
+- GET
+  GET book
+  http://localhost:8000/books
+  This route makes a get request to the book route and it returns a list of books in the database. The route requires no authentication.
 
-Set up an Express application with appropriate middleware.
-Include middleware for JSON parsing and logging.
+- POST
+  POST book
+  http://localhost:8000/books
+  This route creates a book into the database. It require passing a book object. This data is validated using TypeScript and MongoDB schema validation. Any unexpected data input will throw an error.
 
-#### Routes:
-Create routes for the following CRUD operations:
+  If the operation is successful, it will return a success message and the book data that was created.
+  Body raw (json)
+  json
+  {
+  "title": "Beginner JavaScript, Third Edition",
+  "author": "Olanrewaju",
+  "yearPublished": 2024,
+  "isbn": "97815029279509",
+  "\_\_v": 0
+  }
 
-##### Books:
-- Create a new book.
-- Get a list of all books.
-- Get details of a specific book.
-- Update the details of a book.
-- Delete a book.
-  
-##### Authors:
-- Create a new author.
-- Get a list of all authors.
-- Get details of a specific author.
-- Update the details of an author.
-- Delete an author.
-  
-##### Categories:
-- Create a new category.
-- Get a list of all categories.
-- Get details of a specific category.
-- Update the details of a category.
-- Delete a category.
+- PUT
+  PUT book
+  http://localhost:8000/books/65e844e3ef2b8ed44795b0e5
+  This route is used to update data entry in the database. The route expects an object containing the body of the book to update. It also expects the ID of the particular book to be updated.
 
-#### Data Storage:
-- Use an in-memory array or a simple database (e.g., MongoDB or MySQL) to store books, authors, and categories.
-- Implement appropriate relationships between books, authors, and categories.
+If successful, the api returns success message, status code '200 OK' and the data acknowledgement.
 
-#### Validation:
-- Validate the input data for creating and updating books, authors, and categories.
-- Include appropriate error handling and return meaningful error messages.
+Body
+raw (json)
+json
+{"author": "Olanrewaju Balogun"}
+DELETE
+DELETE book
+http://localhost:8000/books/:id
 
-#### Testing:
-Write unit tests for at least two routes using a testing framework of your choice (Jest, Mocha, etc.).
+Path Variables
+id
 
-#### Documentation:
-- Provide clear documentation on how to run your application and tests.
-- Include a brief overview of the project structure and any important design decisions.
-- Use Postman to document your endpoints
+- GET
+  GET book id
+  http://localhost:4400/books/:id
+  This route gets a specific book based on ID specified.
 
-#### Bonus Points:
-- Implement sorting and filtering options for the list of books, authors, and categories.
-- Add pagination for the list endpoints.
-- Include user authentication middleware.
-
-#### Submission Guidelines:
-- Fork this repository and commit your code.
-- Include a README.md file with instructions on how to run the application and tests.
-- Create a pull request with your completed assessment.
-
-
+Path Variables
+id
+GET
+GET root route
+http://localhost:8000
+This route goes to the roote route. It returns a simple string.
