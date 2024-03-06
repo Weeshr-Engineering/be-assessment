@@ -1,66 +1,136 @@
 
 # Project: Bookstore API
-## Overview:
-Build a RESTful API for a bookstore application using Node.js, Express, and TypeScript. The API should manage books, authors, and categories. Each book has a title, author, category, publication year, and ISBN.
+# CRUD Operations API Documentation
 
-## Requirements:
-### Setup:
+This documentation outlines CRUD (Create, Read, Update, Delete) operations for managing Books, Authors, and Categories in MongoDB.
 
-- Initialize a new Node.js project using npm or yarn.
-- Use TypeScript for your project.
-#### Express Setup:
+## Getting Started
 
-Set up an Express application with appropriate middleware.
-Include middleware for JSON parsing and logging.
+To start the application, run the following command:
 
-#### Routes:
-Create routes for the following CRUD operations:
-
-##### Books:
-- Create a new book.
-- Get a list of all books.
-- Get details of a specific book.
-- Update the details of a book.
-- Delete a book.
-  
-##### Authors:
-- Create a new author.
-- Get a list of all authors.
-- Get details of a specific author.
-- Update the details of an author.
-- Delete an author.
-  
-##### Categories:
-- Create a new category.
-- Get a list of all categories.
-- Get details of a specific category.
-- Update the details of a category.
-- Delete a category.
-
-#### Data Storage:
-- Use an in-memory array or a simple database (e.g., MongoDB or MySQL) to store books, authors, and categories.
-- Implement appropriate relationships between books, authors, and categories.
-
-#### Validation:
-- Validate the input data for creating and updating books, authors, and categories.
-- Include appropriate error handling and return meaningful error messages.
-
-#### Testing:
-Write unit tests for at least two routes using a testing framework of your choice (Jest, Mocha, etc.).
-
-#### Documentation:
-- Provide clear documentation on how to run your application and tests.
-- Include a brief overview of the project structure and any important design decisions.
-- Use Postman to document your endpoints
-
-#### Bonus Points:
-- Implement sorting and filtering options for the list of books, authors, and categories.
-- Add pagination for the list endpoints.
-- Include user authentication middleware.
-
-#### Submission Guidelines:
-- Fork this repository and commit your code.
-- Include a README.md file with instructions on how to run the application and tests.
-- Create a pull request with your completed assessment.
+npm run dev
 
 
+## Code Structure
+
+```
+project-root
+│   app.ts
+│   server.ts
+│
+└─── model
+│   │   books.ts
+│   │   author.ts
+│   │   categories.ts
+│   │   user.ts
+│   
+└─── controller
+│   │   bookCtrl.ts
+│   │   authorCtrl.ts
+│   │   categoryCtrl.ts
+│   │   userCtrl.ts
+│
+└─── routes
+    │   book.ts
+    │   author.ts
+    │   category.ts
+    │   users.ts
+
+In the `model` folder, you'll find all schemas and models. The `controller` folder contains route logic. The `routes` folder contains route files for each endpoint. These route files are exported into `app.ts`, where the app is initialized. Finally, `app.ts` is exported to `server.ts`, which is the root file of the application.
+
+## Authentication
+
+### Login
+
+**Endpoint:** `POST /api/user/login`
+
+**Request Body:**
+- email (String, required)
+- password (String, required)
+
+**Response:**
+Upon successful login, a cookie is created which allows the user to access routes with authorization.
+
+## Books
+
+### Create a New Book
+
+**Endpoint:** `POST /api/book`
+
+### Get a List of All Books
+
+**Endpoint:** `GET /api/book`
+
+**Query Parameters:**
+- page (optional): Page number for pagination
+- limit (optional): Number of items per page
+- title (optional): Filter by title
+
+
+### Get Details of a Specific Book
+
+**Endpoint:** `GET /api/book/:id`
+
+### Update the Details of a Book
+
+**Endpoint:** `PUT /api/book/:id`
+
+### Delete a Book
+
+**Endpoint:** `DELETE /api/book/:id`
+
+## Authors
+
+### Create a New Author
+
+**Endpoint:** `POST /api/author`
+
+### Get a List of All Authors
+
+**Endpoint:** `GET /api/author`
+
+**Query Parameters:**
+- page (optional): Page number for pagination
+- limit (optional): Number of items per page
+
+### Get Details of a Specific Author
+
+**Endpoint:** `GET /api/author/:id`
+
+### Update the Details of an Author
+
+**Endpoint:** `PUT /api/author/:id`
+
+### Delete an Author
+
+**Endpoint:** `DELETE /api/author/:id`
+
+## Categories
+
+### Create a New Category
+
+**Endpoint:** `POST /api/category`
+
+### Get a List of All Categories
+
+**Endpoint:** `GET /api/category`
+
+**Query Parameters:**
+- page (optional): Page number for pagination
+- limit (optional): Number of items per page
+
+### Get Details of a Specific Category
+
+**Endpoint:** `GET /api/category/:id`
+
+### Update the Details of a Category
+
+**Endpoint:** `PUT /api/category/:id`
+
+### Delete a Category
+
+**Endpoint:** `DELETE /api/category/:id`
+
+
+## Find POSTMAN documentation HERE
+https://documenter.getpostman.com/view/30504924/2sA2xe5Edf
