@@ -42,7 +42,7 @@ Create routes for the following CRUD operations:
 - git clone https://github.com/Marktech2002/be-assessment.git
 - cd be-assessment
 - npm install
-- set up .env file 
+- set up .env environment variable 
 - PORT=5001
 - MONGO_URL=
 - NODE_ENV=development
