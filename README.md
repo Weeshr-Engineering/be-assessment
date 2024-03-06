@@ -37,7 +37,7 @@ project-root
     │   category.ts
     │   users.ts
 
-In the `model` folder, you'll find all schemas and models. The `controller` folder contains route logic. The `routes` folder contains route files for each endpoint. These route files are exported into `app.ts`, where the app is initialized. Finally, `app.ts` is exported to `server.ts`, which is the root file of the application.
+In the `model` folder, you'll find all schemas and models. The `controller` folder contains route logic. <br>The `routes` folder contains route files for each endpoint. <BR>These route files are exported into `app.ts`, where the app is initialized. <BR>Finally, `app.ts` is exported to `server.ts`, which is the root file of the application.
 ```
 
 ## Authentication
