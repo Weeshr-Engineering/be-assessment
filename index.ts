@@ -26,9 +26,7 @@ app.use("/api/categories", categoryRoutes);
 
 const PORT = process.env.PORT || 5001;
 mongoose
-  .connect(
-    "mongodb+srv://Heepjay:Hipjay69@cluster0.0ykgrrp.mongodb.net/bookstore"
-  )
+  .connect(process.env.MONGODB_URI!)
   .then(() => {
     app.listen(PORT, () => console.log(`Server running on PORT: ${PORT}`));
   })
