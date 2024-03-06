@@ -1,6 +1,7 @@
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 import bookRoutes from "./books/books.routes";
+import authorsRoutes from "./authors/authors.route";
 import db from "./config/dbConfig";
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 bookRoutes(app);
+authorsRoutes(app);
 
 app.listen(port, () => {
   console.log(`[server]: Server is running at http://localhost:${port}`);
