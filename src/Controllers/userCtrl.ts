@@ -72,10 +72,15 @@ export const login_post = async (req: Request, res: Response) => {
             secure: process.env.NODE_ENV === 'production',
             signed: true
         })
-        res.status(200).json({ token, user: user.name });
+        res.status(200).json({ message:'login successful!'});
     }
     catch(err) {
         const errors = handleErrors(err)
         res.status(400).json({ errors })
     }
+}
+
+export const logout_get = async (req: Request, res: Response) => {
+    res.cookie('jwt', "", {maxAge: 1})
+    res.json({ message:"Logout successful!"})
 }

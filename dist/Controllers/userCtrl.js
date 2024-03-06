@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.login_post = exports.signup_post = void 0;
+exports.logout_get = exports.login_post = exports.signup_post = void 0;
 const user_1 = require("../Models/user");
 //Handle Errors
 const handleErrors = (err) => {
@@ -73,7 +73,7 @@ const login_post = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
             secure: process.env.NODE_ENV === 'production',
             signed: true
         });
-        res.status(200).json({ token, user: user.name });
+        res.status(200).json({ message: 'login successful!' });
     }
     catch (err) {
         const errors = handleErrors(err);
@@ -81,3 +81,8 @@ const login_post = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     }
 });
 exports.login_post = login_post;
+const logout_get = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    res.cookie('jwt', "", { maxAge: 1 });
+    res.json({ message: "Logout successful!" });
+});
+exports.logout_get = logout_get;

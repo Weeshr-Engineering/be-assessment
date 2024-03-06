@@ -1,6 +1,8 @@
 import { Router } from 'express';
 const router = Router();
 import { getBook, getBooks, createBook, updateBook, deleteBook } from "../Controllers/bookCtrl";
+import { requireAuth } from '../Middleware/auth';
+
 
 //GET all Books
 router.get('/', getBooks)
@@ -9,13 +11,13 @@ router.get('/', getBooks)
 router.get('/:id', getBook)
 
 //POST Book
-router.post('/', createBook)
+router.post('/', requireAuth, createBook)
 
 //DELETE one Book
-router.delete('/:id', deleteBook)
+router.delete('/:id', requireAuth, deleteBook)
 
 //UPDATE one Book
-router.put('/:id', updateBook)
+router.put('/:id', requireAuth, updateBook)
 
 
 export default router;

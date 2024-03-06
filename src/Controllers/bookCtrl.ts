@@ -6,15 +6,20 @@ import mongoose from 'mongoose';
 const getBooks = async (req: Request, res: Response) => {
     const page = parseInt(req.query.page as string) || 1; 
     const limit = parseInt(req.query.limit as string) || 10;
+    const sortBy = req.query.sortBy || null;
+
     try {
+        let query = Book.find().populate(['author', 'category']).skip((page - 1) * limit).limit(limit);
+
+        if (sortBy === 'title') {
+            query = query.sort({ 'title': 1 });
+        } 
 
         const totalBooks = await Book.countDocuments();
         const totalPages = Math.ceil(totalBooks / limit);
 
-        const books = await Book.find()
-        .populate(['author', 'category'])
-        .skip((page - 1) * limit) 
-        .limit(limit);
+        const books = await query;
+
         res.status(200).json({
             books,
             currentPage: page,

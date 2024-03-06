@@ -16,9 +16,19 @@ exports.deleteCategory = exports.updateCategory = exports.createCategory = expor
 const categories_1 = require("../Models/categories");
 const mongoose_1 = __importDefault(require("mongoose"));
 const getCategories = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
     try {
-        const categories = yield categories_1.Category.find();
-        res.status(200).send(categories);
+        const totalCategories = yield categories_1.Category.countDocuments();
+        const totalPages = Math.ceil(totalCategories / limit);
+        const categories = yield categories_1.Category.find()
+            .skip((page - 1) * limit)
+            .limit(limit);
+        res.status(200).json({
+            categories,
+            totalPages,
+            currentPage: page
+        });
     }
     catch (error) {
         res.status(500).json({ message: "Error retrieving categories" });

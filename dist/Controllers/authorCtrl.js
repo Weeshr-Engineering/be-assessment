@@ -16,9 +16,19 @@ exports.deleteAuthor = exports.updateAuthor = exports.createAuthor = exports.get
 const author_1 = require("../Models/author");
 const mongoose_1 = __importDefault(require("mongoose"));
 const getAuthors = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
     try {
-        const authors = yield author_1.Author.find();
-        res.status(200).send(authors);
+        const totalAuthors = yield author_1.Author.countDocuments();
+        const totalPages = Math.ceil(totalAuthors / limit);
+        const authors = yield author_1.Author.find()
+            .skip((page - 1) * limit)
+            .limit(limit);
+        res.status(200).json({
+            authors,
+            totalPages,
+            currentPage: page
+        });
     }
     catch (error) {
         res.status(500).json({ message: "Error retrieving Authors" });

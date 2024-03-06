@@ -16,13 +16,24 @@ exports.deleteBook = exports.updateBook = exports.createBook = exports.getBook =
 const books_1 = require("../Models/books");
 const mongoose_1 = __importDefault(require("mongoose"));
 const getBooks = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+    const sortBy = req.query.sortBy || null;
     try {
-        const books = yield books_1.Book.find().populate(['author', 'category']);
-        console.log(books);
-        res.status(200).send(books);
+        let query = books_1.Book.find().populate(['author', 'category']).skip((page - 1) * limit).limit(limit);
+        if (sortBy === 'title') {
+            query = query.sort({ 'title': 1 });
+        }
+        const totalBooks = yield books_1.Book.countDocuments();
+        const totalPages = Math.ceil(totalBooks / limit);
+        const books = yield query;
+        res.status(200).json({
+            books,
+            currentPage: page,
+            totalPages
+        });
     }
     catch (error) {
-        console.log(error);
         res.status(500).json({ message: "Error retrieving Books" });
     }
 });
