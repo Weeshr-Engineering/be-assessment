@@ -12,12 +12,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteBook = exports.updateBookById = exports.createBook = void 0;
+exports.getBooks = exports.deleteBook = exports.updateBookById = exports.createBook = void 0;
 const books_1 = __importDefault(require("../model/books"));
 const createBook = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     var _a;
     try {
-        const { Title, datePublished, Description, pageCount, Genre, Publisher, category, bookId } = req.body;
+        const { Title, datePublished, Description, pageCount, Genre, Publisher, bookId } = req.body;
         // Get the author ID from the authenticated user
         const authorId = (_a = req.user) === null || _a === void 0 ? void 0 : _a.id;
         // Check if authorId exists (user is authenticated)
@@ -31,7 +31,6 @@ const createBook = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
             pageCount,
             Genre,
             Publisher,
-            category,
             authorId, // Assign the author ID to the book
             bookId,
         });
@@ -88,6 +87,40 @@ const deleteBook = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     }
 });
 exports.deleteBook = deleteBook;
+const books_2 = __importDefault(require("../model/books"));
+const getBooks = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const { sortBy, filterBy, pageNumber, limitNumber } = req.query;
+        // Initialize query object
+        let query = {};
+        // Sorting
+        if (sortBy) {
+            const sortField = sortBy.toString();
+            query = Object.assign(Object.assign({}, query), { $sort: { [sortField]: 1 } }); // Sort in ascending order
+        }
+        // Filtering
+        if (filterBy) {
+            const filterField = filterBy.toString();
+            query = Object.assign(Object.assign({}, query), { [filterField]: req.query[filterField] });
+        }
+        // Pagination
+        const currentPageNumber = parseInt(String(pageNumber) || '1', 10);
+        const currentLimitNumber = parseInt(String(limitNumber) || '10', 10);
+        const skip = (currentPageNumber - 1) * currentLimitNumber;
+        console.log('Pagination Parameters:', { pageNumber, limitNumber, skip, currentLimitNumber });
+        const books = yield books_2.default.find(query)
+            .skip(skip)
+            .limit(currentLimitNumber)
+            .populate('user'); // Populate user details
+        console.log('Generated MongoDB Query:', books_2.default.find(query).skip(skip).limit(currentLimitNumber).explain());
+        res.status(200).json({ books });
+    }
+    catch (error) {
+        console.error('Error getting books:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+exports.getBooks = getBooks;
 // import { bookData } from '../utilities/books';
 // import { ZodError } from 'zod'; // Import ZodError from zod
 // export const getAllBooks = async (req: Request, res: Response): Promise<void> => {

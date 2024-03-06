@@ -3,6 +3,16 @@ import  user  from '../model/user';
 import  category  from '../model/categories';
 
 
+export interface IBook extends Document {
+    Title: string;
+    Description: string;
+    pageCount: string;
+    Genre: string;
+    Publisher: string;
+    datePublished: string;
+    user: string; // Assuming user is referenced by ID
+  }
+
 const bookSchema = new mongoose.Schema({
     Title: {type:String, required:true},
     Description:{type:String, required:true},
@@ -17,7 +27,7 @@ const bookSchema = new mongoose.Schema({
     }
 });
 
-const books = mongoose.model("books", bookSchema);
+const books = mongoose.model<IBook>("books", bookSchema);
 
 
 export default books;

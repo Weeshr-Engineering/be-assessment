@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { Request, Response, query } from 'express';
 import books from '../model/books';
 import { authorize } from '../middleware/middleware';
 import user from '../model/user';
@@ -10,7 +10,7 @@ interface AuthRequest extends Request {
 
 export const createBook = async (req: AuthRequest, res: Response) => {
   try {
-    const { Title, datePublished, Description, pageCount, Genre, Publisher, category, bookId } = req.body;
+    const { Title, datePublished, Description, pageCount, Genre, Publisher, bookId } = req.body;
 
     // Get the author ID from the authenticated user
     const authorId = req.user?.id;
@@ -27,7 +27,6 @@ export const createBook = async (req: AuthRequest, res: Response) => {
       pageCount,
       Genre,
       Publisher,
-      category,
       authorId, // Assign the author ID to the book
       bookId,
     });
@@ -84,6 +83,54 @@ export const deleteBook = async (req: AuthRequest, res: Response) => {
 };
 
 
+import Book, { IBook } from '../model/books';
+
+interface QueryParams {
+  sortBy?: string;
+  filterBy?: string;
+  pageNumber?: string; // Use a more descriptive name
+  limitNumber?: string; // Use a more descriptive name
+}
+
+export const getBooks = async (req: Request, res: Response) => {
+  try {
+    const { sortBy, filterBy, pageNumber, limitNumber } = req.query as QueryParams;
+
+    // Initialize query object
+    let query: any = {};
+
+    // Sorting
+    if (sortBy) {
+      const sortField = sortBy.toString();
+      query = { ...query, $sort: { [sortField]: 1 } }; // Sort in ascending order
+    }
+
+    // Filtering
+    if (filterBy) {
+      const filterField = filterBy.toString();
+      query = { ...query, [filterField]: req.query[filterField] };
+    }
+
+    // Pagination
+    const currentPageNumber = parseInt(String(pageNumber) || '1', 10);
+    const currentLimitNumber = parseInt(String(limitNumber) || '10', 10);
+    const skip = (currentPageNumber - 1) * currentLimitNumber;
+
+    console.log('Pagination Parameters:', { pageNumber, limitNumber, skip, currentLimitNumber });
+
+    const books: IBook[] = await Book.find(query)
+      .skip(skip)
+      .limit(currentLimitNumber)
+      .populate('user'); // Populate user details
+
+    console.log('Generated MongoDB Query:', Book.find(query).skip(skip).limit(currentLimitNumber).explain());
+
+    res.status(200).json({ books });
+  } catch (error) {
+    console.error('Error getting books:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};
 
 
 
