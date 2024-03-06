@@ -2,20 +2,10 @@
 # Project: Bookstore API
 ## Overview:
 Build a RESTful API for a bookstore application using Node.js, Express, and TypeScript. The API should manage books, authors, and categories. Each book has a title, author, category, publication year, and ISBN.
-
-## Requirements:
-### Setup:
-
-- Initialize a new Node.js project using npm or yarn.
-- Use TypeScript for your project.
-#### Express Setup:
-
-Set up an Express application with appropriate middleware.
-Include middleware for JSON parsing and logging.
-
+#### Documentation 
+-  https://documenter.getpostman.com/view/24016790/2sA2xe5EUp
+  
 #### Routes:
-Create routes for the following CRUD operations:
-
 ##### Books:
 - Create a new book.
 - Get a list of all books.
@@ -37,6 +27,25 @@ Create routes for the following CRUD operations:
 - Update the details of a category.
 - Delete a category.
 
+#### INSTALLATION
+- To run the Bookstore API and its tests, follow these steps
+- git clone https://github.com/Marktech2002/be-assessment.git
+- cd be-assessment
+- npm install
+- set up .env environment variable 
+- PORT=5001
+- MONGO_URL=
+- NODE_ENV=development
+- JWT_SECRET=
+- ACCESS_TOKEN_SECRET=
+- REFRESH_TOKEN_SECRET=
+- ACCESS_TOKEN_EXPIRES_IN=
+- REFRESH_TOKEN_EXPIRES_IN=
+- npm start 
+
+#### TESTING 
+- npm test
+- 
 #### Data Storage:
 - Use an in-memory array or a simple database (e.g., MongoDB or MySQL) to store books, authors, and categories.
 - Implement appropriate relationships between books, authors, and categories.
@@ -63,4 +72,7 @@ Write unit tests for at least two routes using a testing framework of your choic
 - Include a README.md file with instructions on how to run the application and tests.
 - Create a pull request with your completed assessment.
 
-
+#### Submission Guidelines:
+- Fork this repository and commit your code.
+- Include a README.md file with instructions on how to run the application and tests.
+- Create a pull request with your completed assessment.

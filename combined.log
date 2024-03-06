@@ -1,0 +1,292 @@
+{"level":"error","message":{"code":8000,"codeName":"AtlasError","connectionGeneration":0,"ok":0},"timestamp":"2024-03-05T08:36:17.599Z"}
+{"level":"error","message":{"code":8000,"codeName":"AtlasError","connectionGeneration":0,"ok":0},"timestamp":"2024-03-05T08:38:43.973Z"}
+{"level":"error","message":{"code":8000,"codeName":"AtlasError","connectionGeneration":0,"ok":0},"timestamp":"2024-03-05T08:43:38.740Z"}
+{"level":"error","message":{"code":8000,"codeName":"AtlasError","connectionGeneration":0,"ok":0},"timestamp":"2024-03-05T08:44:39.256Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T08:46:33.926Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T08:50:23.958Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:10:18.382Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:14:52.700Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:15:14.410Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:16:28.109Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:17:00.669Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:17:35.693Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:19:13.991Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:20:09.700Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:21:16.747Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:21:38.140Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:23:04.749Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:25:05.955Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:27:07.307Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:28:14.524Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:29:15.113Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:31:27.234Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:34:52.944Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:35:35.741Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:36:47.630Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:41:31.234Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:43:34.036Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:43:50.973Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:44:51.262Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:45:06.473Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:47:09.930Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:47:58.552Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:48:25.140Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:49:38.418Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:50:39.219Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:50:55.152Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:51:20.368Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:52:15.581Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:53:18.500Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:53:36.513Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:55:03.383Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:55:42.966Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:56:07.211Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:56:36.050Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:57:30.819Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T09:58:07.037Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:03:22.089Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:03:45.943Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:04:07.560Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:05:20.707Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:06:29.264Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:10:00.576Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:13:11.096Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:17:13.420Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:21:07.354Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:23:28.031Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:25:28.995Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:25:52.076Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:27:38.388Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:28:07.990Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:31:22.957Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:34:24.890Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:35:47.086Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:37:09.010Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:38:06.414Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:38:23.256Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:38:57.287Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:41:26.691Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:43:46.925Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:44:16.103Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:45:23.794Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:45:48.679Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:48:32.424Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:49:02.983Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:52:10.814Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:55:04.760Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:56:19.637Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:57:01.387Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T10:59:46.648Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T11:00:22.703Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T11:01:42.508Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T11:07:30.008Z"}
+{"level":"error","message":{"code":"ESERVFAIL","hostname":"_mongodb._tcp.wesshr.fxf3s7q.mongodb.net","syscall":"querySrv"},"timestamp":"2024-03-05T11:14:49.558Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T11:15:06.973Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T11:16:07.959Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T11:18:32.294Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T11:29:21.485Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T11:36:00.571Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T11:39:05.114Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T11:41:53.782Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T11:42:41.731Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T11:46:14.348Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T11:46:33.329Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T11:52:40.728Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T11:53:58.848Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T11:54:21.230Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T11:55:07.116Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T12:02:07.432Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T12:04:38.419Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T12:06:21.945Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T12:08:31.199Z"}
+{"level":"error","message":{"code":"EREFUSED","hostname":"_mongodb._tcp.wesshr.fxf3s7q.mongodb.net","syscall":"querySrv"},"timestamp":"2024-03-05T12:10:23.391Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T12:15:58.191Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T12:21:58.683Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T12:22:53.306Z"}
+{"level":"error","message":"Error fetching book:","timestamp":"2024-03-05T12:29:35.673Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T12:37:32.191Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T12:39:09.556Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T12:39:50.852Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T12:43:41.724Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T13:34:17.568Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T13:35:16.004Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T13:35:32.251Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T13:36:32.302Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T13:37:08.592Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T13:40:55.197Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T13:41:52.397Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T13:43:01.952Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T13:47:24.794Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T13:48:59.935Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T13:49:48.174Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T13:51:42.702Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T13:52:44.864Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T13:54:17.112Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T13:54:50.380Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T13:56:31.047Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T13:57:56.282Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T14:00:03.652Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T14:00:48.746Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T14:02:30.699Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T14:03:42.346Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T14:05:12.126Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T14:05:56.449Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T14:08:14.566Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T14:09:05.486Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T14:09:57.607Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T14:12:53.344Z"}
+{"level":"error","message":{"message":"connection timed out","reason":{"commonWireVersion":0,"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"logicalSessionTimeoutMinutes":30,"maxElectionId":null,"maxSetVersion":null,"servers":{},"setName":"atlas-bgsq1k-shard-0","stale":false,"type":"ReplicaSetNoPrimary"}},"timestamp":"2024-03-05T15:00:47.700Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T15:01:44.639Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T15:14:13.422Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T15:43:17.861Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T15:46:10.598Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T15:47:13.521Z"}
+{"level":"error","message":{"message":"connection timed out","reason":{"commonWireVersion":0,"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"logicalSessionTimeoutMinutes":30,"maxElectionId":null,"maxSetVersion":null,"servers":{},"setName":"atlas-bgsq1k-shard-0","stale":false,"type":"ReplicaSetNoPrimary"}},"timestamp":"2024-03-05T16:03:40.695Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T16:03:57.269Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-05T16:05:20.746Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T16:06:29.942Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T16:10:01.257Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T16:10:39.471Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T16:11:24.792Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-05T16:12:39.368Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T16:13:03.209Z"}
+{"level":"error","message":{"message":"getaddrinfo ENOTFOUND ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","reason":{"commonWireVersion":0,"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"logicalSessionTimeoutMinutes":30,"maxElectionId":null,"maxSetVersion":null,"servers":{},"setName":"atlas-bgsq1k-shard-0","stale":false,"type":"ReplicaSetNoPrimary"}},"timestamp":"2024-03-05T16:20:45.461Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T16:21:23.874Z"}
+{"level":"error","message":{"message":"getaddrinfo ENOTFOUND ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","reason":{"commonWireVersion":0,"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"logicalSessionTimeoutMinutes":30,"maxElectionId":null,"maxSetVersion":null,"servers":{},"setName":"atlas-bgsq1k-shard-0","stale":false,"type":"ReplicaSetNoPrimary"}},"timestamp":"2024-03-05T16:24:34.362Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T16:25:21.140Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T16:29:53.249Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T18:00:36.427Z"}
+{"level":"info","message":{"expiredAt":"2024-03-05T16:23:40.000Z","message":"jwt expired","name":"TokenExpiredError"},"timestamp":"2024-03-05T18:00:46.662Z"}
+{"level":"info","message":{"expiredAt":"2024-03-05T16:23:40.000Z","message":"jwt expired","name":"TokenExpiredError"},"timestamp":"2024-03-05T18:01:40.108Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T18:16:55.242Z"}
+{"level":"info","message":{"expiredAt":"2024-03-05T16:23:40.000Z","message":"jwt expired","name":"TokenExpiredError"},"timestamp":"2024-03-05T18:17:49.858Z"}
+{"level":"info","message":{"expiredAt":"2024-03-05T16:23:40.000Z","message":"jwt expired","name":"TokenExpiredError"},"timestamp":"2024-03-05T18:18:05.547Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T18:19:54.564Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T18:20:30.878Z"}
+{"level":"info","message":{"message":"invalid token","name":"JsonWebTokenError"},"timestamp":"2024-03-05T18:22:18.163Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T18:22:50.038Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T18:29:20.296Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T18:29:38.096Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T18:44:09.329Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T18:45:31.123Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T18:56:27.712Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T18:58:12.563Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T19:00:24.924Z"}
+{"level":"error","message":{"message":"invalid signature","name":"JsonWebTokenError"},"timestamp":"2024-03-05T19:02:03.473Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T19:03:50.470Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T19:08:40.672Z"}
+{"level":"error","message":"Error creating book:","timestamp":"2024-03-05T19:08:43.977Z"}
+{"level":"error","message":"Error creating book:","timestamp":"2024-03-05T19:08:55.084Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T19:09:58.508Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T19:11:35.637Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T19:13:45.660Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T19:14:02.085Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T19:15:05.746Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T19:15:50.861Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T19:16:37.782Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T19:18:40.730Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T19:20:12.084Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T19:22:53.286Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T19:23:50.067Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T19:24:22.696Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T19:24:45.976Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T19:27:44.036Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T19:29:52.479Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T19:33:04.791Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T19:36:18.509Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T19:36:51.007Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T19:40:01.399Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T19:41:23.172Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T19:43:17.795Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T19:45:00.735Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T19:47:42.437Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T19:51:26.840Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T19:56:46.265Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T19:59:14.279Z"}
+{"level":"error","message":"Error fetching book:","timestamp":"2024-03-05T20:00:54.165Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T20:02:19.867Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T20:06:38.229Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T20:09:03.499Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T20:15:12.610Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T20:18:49.962Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T20:21:53.195Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T20:22:34.065Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T20:23:11.812Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T20:23:32.935Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T20:24:57.069Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T20:27:32.017Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T20:29:26.980Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-05T20:32:26.933Z"}
+{"level":"error","message":{"code":"ECONNREFUSED","hostname":"_mongodb._tcp.wesshr.fxf3s7q.mongodb.net","syscall":"querySrv"},"timestamp":"2024-03-06T04:03:47.908Z"}
+{"level":"error","message":{"code":"ECONNREFUSED","hostname":"_mongodb._tcp.wesshr.fxf3s7q.mongodb.net","syscall":"querySrv"},"timestamp":"2024-03-06T04:04:16.751Z"}
+{"level":"error","message":{"code":"ECONNREFUSED","hostname":"_mongodb._tcp.wesshr.fxf3s7q.mongodb.net","syscall":"querySrv"},"timestamp":"2024-03-06T04:06:30.499Z"}
+{"level":"error","message":{"code":"ECONNREFUSED","hostname":"_mongodb._tcp.wesshr.fxf3s7q.mongodb.net","syscall":"querySrv"},"timestamp":"2024-03-06T04:07:29.511Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-06T04:38:09.255Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-06T04:38:58.655Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-00.fxf3s7q.mongodb.net","timestamp":"2024-03-06T04:40:57.009Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-06T04:42:46.173Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-06T04:44:30.393Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-06T07:21:26.590Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-06T07:26:34.983Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-06T07:30:53.039Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-02.fxf3s7q.mongodb.net","timestamp":"2024-03-06T07:55:01.306Z"}
+{"level":"info","message":"Testing Create Book route","timestamp":"2024-03-06T08:02:57.002Z"}
+{"level":"info","message":"Testing Create Book route","timestamp":"2024-03-06T08:03:20.364Z"}
+{"level":"info","message":"Testing Create Book route","timestamp":"2024-03-06T08:12:48.868Z"}
+{"level":"info","message":"Starting Book registration test","timestamp":"2024-03-06T08:12:48.869Z"}
+{"level":"info","message":"Book registration test credentials saved","timestamp":"2024-03-06T08:12:48.870Z"}
+{"level":"info","message":"Testing Create Book route","timestamp":"2024-03-06T08:13:57.132Z"}
+{"level":"info","message":"Starting Book registration test","timestamp":"2024-03-06T08:13:57.134Z"}
+{"level":"info","message":"Book registration test credentials saved","timestamp":"2024-03-06T08:13:57.135Z"}
+{"level":"info","message":"Database Sighted : ac-xyjk40w-shard-00-01.fxf3s7q.mongodb.net","timestamp":"2024-03-06T08:17:04.730Z"}
+{"level":"info","message":"Testing Create Book route","timestamp":"2024-03-06T08:17:04.723Z"}
+{"level":"info","message":"Starting Book registration test","timestamp":"2024-03-06T08:17:04.725Z"}
+{"level":"info","message":"Book registration test credentials saved","timestamp":"2024-03-06T08:17:04.726Z"}
+{"level":"info","message":"Testing Create Book route","timestamp":"2024-03-06T08:20:37.059Z"}
+{"level":"info","message":"Starting Book registration test","timestamp":"2024-03-06T08:20:37.060Z"}
+{"level":"info","message":"Validating Create Book Credentails","timestamp":"2024-03-06T08:20:37.061Z"}
+{"level":"info","message":"Testing Create Book route","timestamp":"2024-03-06T08:23:16.409Z"}
+{"level":"info","message":"Starting Book registration test","timestamp":"2024-03-06T08:23:16.412Z"}
+{"level":"info","message":"Validating Create Book Credentails","timestamp":"2024-03-06T08:23:16.413Z"}
+{"level":"info","message":"Testing Create Book route","timestamp":"2024-03-06T08:24:12.501Z"}
+{"level":"info","message":"Starting Book registration test","timestamp":"2024-03-06T08:24:12.505Z"}
+{"level":"info","message":"Validating Create Book Credentails","timestamp":"2024-03-06T08:24:12.539Z"}
+{"level":"info","message":"Testing Create Book route","timestamp":"2024-03-06T08:24:38.558Z"}
+{"level":"info","message":"Starting Book registration test","timestamp":"2024-03-06T08:24:38.560Z"}
+{"level":"info","message":"Validating Create Book Credentails","timestamp":"2024-03-06T08:24:38.562Z"}
+{"level":"info","message":"Testing Create Book route","timestamp":"2024-03-06T08:25:06.721Z"}
+{"level":"info","message":"Starting Book registration test","timestamp":"2024-03-06T08:25:06.724Z"}
+{"level":"info","message":"Validating Create Book Credentails","timestamp":"2024-03-06T08:25:06.726Z"}
+{"level":"info","message":"Testing Create Book route","timestamp":"2024-03-06T08:25:32.163Z"}
+{"level":"info","message":"Starting Book registration test","timestamp":"2024-03-06T08:25:32.165Z"}
+{"level":"info","message":"Validating Create Book Credentails","timestamp":"2024-03-06T08:25:32.165Z"}
+{"level":"info","message":"Testing Create Book route","timestamp":"2024-03-06T08:28:28.851Z"}
+{"level":"info","message":"Starting Book registration test","timestamp":"2024-03-06T08:28:28.855Z"}
+{"level":"info","message":"Validating Create Book Credentails","timestamp":"2024-03-06T08:28:28.859Z"}
+{"level":"info","message":"Testing Create Book route","timestamp":"2024-03-06T08:28:52.587Z"}
+{"level":"info","message":"Starting Book registration test","timestamp":"2024-03-06T08:28:52.591Z"}
+{"level":"info","message":"Validating Create Book Credentails","timestamp":"2024-03-06T08:28:52.654Z"}
+{"level":"info","message":"Testing Create Book route","timestamp":"2024-03-06T08:29:28.669Z"}
+{"level":"info","message":"Starting Book registration test","timestamp":"2024-03-06T08:29:28.670Z"}
+{"level":"info","message":"Validating Create Book Credentails","timestamp":"2024-03-06T08:29:28.672Z"}
+{"level":"info","message":"Testing Create Book route","timestamp":"2024-03-06T08:35:14.945Z"}
+{"level":"info","message":"Starting Book registration test","timestamp":"2024-03-06T08:35:14.946Z"}
+{"level":"info","message":"Validating Create Book Credentails","timestamp":"2024-03-06T08:35:14.947Z"}
+{"level":"info","message":"Testing Create Book route","timestamp":"2024-03-06T08:38:07.449Z"}
+{"level":"info","message":"Starting Book registration test","timestamp":"2024-03-06T08:38:07.451Z"}
+{"level":"info","message":"Validating Create Book Credentails","timestamp":"2024-03-06T08:38:07.451Z"}
+{"level":"info","message":"Testing Create Book route","timestamp":"2024-03-06T08:40:38.823Z"}
+{"level":"info","message":"Starting Book registration test","timestamp":"2024-03-06T08:40:38.824Z"}
+{"level":"info","message":"Validating Create Book Credentails","timestamp":"2024-03-06T08:40:38.825Z"}
+{"level":"info","message":"Testing Create Book route","timestamp":"2024-03-06T08:41:03.140Z"}
+{"level":"info","message":"Starting Book registration test","timestamp":"2024-03-06T08:41:03.143Z"}
+{"level":"info","message":"Validating Create Book Credentails","timestamp":"2024-03-06T08:41:03.148Z"}
+{"level":"info","message":"Testing Get All Books route","timestamp":"2024-03-06T08:46:18.592Z"}
+{"level":"info","message":"Starting Get All Books test","timestamp":"2024-03-06T08:46:18.594Z"}
+{"level":"info","message":"Getting all Books Record","timestamp":"2024-03-06T08:46:18.597Z"}
+{"level":"info","message":"Testing Get All Books route","timestamp":"2024-03-06T08:53:41.715Z"}
+{"level":"info","message":"Starting Get All Books test","timestamp":"2024-03-06T08:53:41.717Z"}
+{"level":"info","message":"Getting all Books Record","timestamp":"2024-03-06T08:53:41.728Z"}
+{"level":"info","message":"Testing Get All Books route","timestamp":"2024-03-06T08:59:37.236Z"}
+{"level":"info","message":"Starting Get All Books test","timestamp":"2024-03-06T08:59:37.241Z"}
+{"level":"info","message":"Getting all Books Record","timestamp":"2024-03-06T08:59:37.250Z"}
