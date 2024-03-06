@@ -2,7 +2,7 @@ import { Response, Request } from "express";
 import bcrypt from "bcrypt";
 import { AuthorModel, Author } from "../models/authorModel";
 import { STATUS_CODES } from "../util/statusCode";
-import { generateAccessToken, generateRefreshToken } from "../util/tokens";
+import { generateToken } from "../util/generateTokens";
 import { logger } from "../util/logger";
 import {
   validateCreateAuthor,
@@ -30,6 +30,7 @@ export const createAuthor = async (req: Request, res: Response, next: any) => {
     });
   }
   const { error } = validateCreateAuthor.validate(req.body);
+  logger.info("Validating Create Author credentials");
   if (error) {
     return res.status(STATUS_CODES.INVALID).json({
       success: false,
@@ -50,7 +51,7 @@ export const createAuthor = async (req: Request, res: Response, next: any) => {
     // Hash password
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
-
+    logger.info("Creating new Author");
     // Create new author instance
     const newAuthor = new AuthorModel({
       name,
@@ -60,7 +61,7 @@ export const createAuthor = async (req: Request, res: Response, next: any) => {
     });
 
     await newAuthor.save();
-
+    logger.info("Author User Created Successfully");
     return res.status(STATUS_CODES.CREATED).json({
       success: true,
       message: "Author created successfully",
@@ -68,7 +69,7 @@ export const createAuthor = async (req: Request, res: Response, next: any) => {
       author: newAuthor,
     });
   } catch (error) {
-    console.error("Error creating author:", error);
+    logger.info(error);
     next(error); // Pass error to Express error handling middleware
   }
 };
@@ -85,6 +86,7 @@ export const createAuthor = async (req: Request, res: Response, next: any) => {
 export const loginAuthor = async (req: Request, res: Response, next: any) => {
   const { email, password } = req.body;
   const { error } = validateLoginAuthor.validate(req.body);
+  logger.info("Validating Login Author Credentials");
   if (error) {
     return res.status(STATUS_CODES.INVALID).json({
       success: false,
@@ -111,21 +113,21 @@ export const loginAuthor = async (req: Request, res: Response, next: any) => {
         status: "Invalid",
       });
     }
-    const accessToken = generateAccessToken(user._id); // access token
-    const refreshToken = generateRefreshToken(user._id); // refresh token
-
-    // Save refresh token with the user
-    user.refreshToken = refreshToken;
-    await user.save();
-
+    logger.info("Password Matched , Logging user");
     return res.status(STATUS_CODES.SUCCESS).json({
       success: true,
       message: "Login successful",
       status: "Success",
-      accessToken,
+      user: {
+        _id: user._id,
+        name: user.name,
+        bio: user.bio,
+      },
+      token: generateToken(user._id),
     });
   } catch (error) {
-    next(error); // Pass error to Express error handling middleware
+    logger.info(error);
+    next(error);
   }
 };
 
@@ -141,7 +143,7 @@ export const loginAuthor = async (req: Request, res: Response, next: any) => {
 export const getAllAuthors = async (req: Request, res: Response, next: any) => {
   try {
     const authors = await AuthorModel.find();
-
+    logger.info("Getting all Authors");
     if (!authors || authors.length === 0) {
       return res.status(STATUS_CODES.NOT_FOUND).json({
         success: false,
@@ -149,6 +151,7 @@ export const getAllAuthors = async (req: Request, res: Response, next: any) => {
         status: "Not Found",
       });
     }
+    logger.info("All authors fetched succesfully");
     return res.status(STATUS_CODES.SUCCESS).json({
       success: true,
       message: "Authors retrieved successfully",
@@ -156,6 +159,7 @@ export const getAllAuthors = async (req: Request, res: Response, next: any) => {
       authors,
     });
   } catch (error) {
+    logger.error(error);
     next(error);
   }
 };
@@ -181,6 +185,7 @@ export const getAuthorById = async (req: Request, res: Response, next: any) => {
         status: "Not Found",
       });
     }
+    logger.info("Geeting a author BY Id");
     return res.status(STATUS_CODES.SUCCESS).json({
       success: true,
       message: "Author details retrieved successfully",
@@ -188,7 +193,7 @@ export const getAuthorById = async (req: Request, res: Response, next: any) => {
       author,
     });
   } catch (error) {
-    console.error("Error retrieving author by ID:", error);
+    logger.error(error);
     return res.status(STATUS_CODES.SERVER_ERROR).json({
       success: false,
       message: "Internal server error",
@@ -214,6 +219,7 @@ export const updateAuthorById = async (
     const authorId = req.params.authorId;
     const updatedData = req.body;
     const { error } = validateUpdateAuthor.validate(req.body);
+    logger.info("validating Update Author Credentials");
     if (error) {
       return res.status(STATUS_CODES.INVALID).json({
         success: false,
@@ -234,13 +240,14 @@ export const updateAuthorById = async (
         status: "Not Found",
       });
     }
+    logger.info("Author updated successfully");
     return res.status(STATUS_CODES.SUCCESS).json({
       success: true,
       message: "Author updated successfully",
       status: "Success",
-      author: updatedAuthor,
     });
   } catch (error) {
+    logger.error(error);
     next(error);
   }
 };
@@ -266,6 +273,7 @@ export const deleteAuthorById = async (
         message: "AuthorId is required",
       });
     }
+    logger.warn("Fetching AuthorId to be deleted");
     const deletedAuthor = await AuthorModel.findByIdAndDelete(authorId);
 
     if (!deletedAuthor) {
@@ -275,13 +283,14 @@ export const deleteAuthorById = async (
         status: "Not Found",
       });
     }
-
+    logger.warn("Deleting an author By AuthorId");
     return res.status(STATUS_CODES.SUCCESS).json({
       success: true,
       message: "Author deleted successfully",
       status: "Success",
     });
   } catch (error) {
+    logger.error(error);
     next(error);
   }
 };

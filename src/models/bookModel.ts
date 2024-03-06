@@ -4,6 +4,7 @@ export interface Book extends Document {
   title: string;
   author: mongoose.Types.ObjectId;
   category: mongoose.Types.ObjectId;
+  categoryName: string;
   publicationYear: number;
   ISBN: string;
 }
@@ -21,6 +22,10 @@ const bookSchema: Schema<Book> = new Schema<Book>(
     category: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Category",
+    },
+    categoryName: {
+      type: String,
+      required: true,
     },
     publicationYear: {
       type: Number,

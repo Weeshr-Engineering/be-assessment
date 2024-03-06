@@ -16,11 +16,15 @@ export const validateLoginAuthor = Joi.object({
 });
 
 export const validateGetAuthor = Joi.object({
-  id: Joi.string().required()
+  id: Joi.string().required(),
 });
 
 export const validateUpdateAuthor = Joi.object({
   name: Joi.string(),
   email: Joi.string().email(),
   bio: Joi.string().optional(),
+});
+
+export const refreshTokenValidate = Joi.object({
+  refreshToken: Joi.string().required().label("Refresh Token"),
 });

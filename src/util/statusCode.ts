@@ -4,4 +4,5 @@ export const STATUS_CODES = {
     NOT_FOUND: 404,
     INVALID : 401,
     SERVER_ERROR: 500,
+    EXISTS : 403,
   };

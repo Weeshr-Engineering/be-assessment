@@ -9,6 +9,8 @@ const categorySchema: Schema<Category> = new Schema<Category>({
   name: {
     type: String,
     required: [true, "Please give a category name"],
+    trim: true,
+    lowercase: true,
   },
   description: {
     type: String,

@@ -2,8 +2,7 @@ import Joi from "joi";
 
 export const validateCreateBook = Joi.object({
   title: Joi.string().required(),
-  author: Joi.string().required(),
-  category: Joi.string().required(),
+  categoryId: Joi.string().required(),
   publicationYear: Joi.number()
     .integer()
     .min(1000)
@@ -11,6 +10,7 @@ export const validateCreateBook = Joi.object({
     .required(),
   ISBN: Joi.string().required().length(13),
 });
+
 
 export const validateUpdateBookData = Joi.object({
   title: Joi.string(),

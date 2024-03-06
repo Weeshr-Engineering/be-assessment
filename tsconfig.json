@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
       "module": "NodeNext",
-      "types": ["node"],
+      "types": ["node", "jest"],
       "moduleResolution": "node",
       "baseUrl": "src",
       "outDir": "dist",
@@ -10,9 +10,10 @@
       "emitDecoratorMetadata": true,
      "experimentalDecorators": true,
      "esModuleInterop" : true ,
+     "allowSyntheticDefaultImports": true
     },
     "include": [
-         "src/**/*" ,
+         "src/**/*",
          ".env"
   ],
   }
