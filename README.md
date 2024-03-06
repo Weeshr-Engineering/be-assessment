@@ -1,66 +1,77 @@
+# Bookstore API Documentation
 
-# Project: Bookstore API
-## Overview:
-Build a RESTful API for a bookstore application using Node.js, Express, and TypeScript. The API should manage books, authors, and categories. Each book has a title, author, category, publication year, and ISBN.
+## Overview
 
-## Requirements:
-### Setup:
+This RESTful API serves as the backend for a bookstore application. It allows users to manage books, authors, and categories. Each book has a title, author, category, publication year, and ISBN.
 
-- Initialize a new Node.js project using npm or yarn.
-- Use TypeScript for your project.
-#### Express Setup:
+### Technologies Used
 
-Set up an Express application with appropriate middleware.
-Include middleware for JSON parsing and logging.
+- Node.js
+- Express.js
+- TypeScript
+- MongoDB
+- Mongoose
+- Jest (for testing)
 
-#### Routes:
-Create routes for the following CRUD operations:
+### How to Run the Application
 
-##### Books:
-- Create a new book.
-- Get a list of all books.
-- Get details of a specific book.
-- Update the details of a book.
-- Delete a book.
-  
-##### Authors:
-- Create a new author.
-- Get a list of all authors.
-- Get details of a specific author.
-- Update the details of an author.
-- Delete an author.
-  
-##### Categories:
-- Create a new category.
-- Get a list of all categories.
-- Get details of a specific category.
-- Update the details of a category.
-- Delete a category.
+1. Clone the repository:
 
-#### Data Storage:
-- Use an in-memory array or a simple database (e.g., MongoDB or MySQL) to store books, authors, and categories.
-- Implement appropriate relationships between books, authors, and categories.
+```bash
+git clone https://github.com/your-username/bookstore-api.git
+cd bookstore-api
+```
 
-#### Validation:
-- Validate the input data for creating and updating books, authors, and categories.
-- Include appropriate error handling and return meaningful error messages.
+### Install dependencies:
 
-#### Testing:
-Write unit tests for at least two routes using a testing framework of your choice (Jest, Mocha, etc.).
+```bash
+npm install
+```
 
-#### Documentation:
-- Provide clear documentation on how to run your application and tests.
-- Include a brief overview of the project structure and any important design decisions.
-- Use Postman to document your endpoints
+### Set up environment variables:
 
-#### Bonus Points:
-- Implement sorting and filtering options for the list of books, authors, and categories.
-- Add pagination for the list endpoints.
-- Include user authentication middleware.
+Create a .env file in the root directory and define the following variables:
 
-#### Submission Guidelines:
-- Fork this repository and commit your code.
-- Include a README.md file with instructions on how to run the application and tests.
-- Create a pull request with your completed assessment.
+```bash
+PORT=3000
+MONGODB_URI=<your-mongodb-uri>
+```
 
+### Install dependencies:
 
+```bash
+npm start
+```
+
+## API Endpoints
+
+### Books
+
+- POST /api/books - Create a new book
+- GET /api/books - Get a list of all books
+- GET /api/books/:id - Get details of a specific book
+- PUT /api/books/:id - Update the details of a book
+- DELETE /api/books/:id - Delete a book
+
+### Authors
+
+- POST /api/authors - Create a new author
+- GET /api/authors - Get a list of all authors
+- GET /api/authors/:id - Get details of a specific author
+- PUT /api/authors/:id - Update the details of an author
+- DELETE /api/authors/:id - Delete an author
+
+### Categories
+
+- POST /api/categories - Create a new category
+- GET /api/categories - Get a list of all categories
+- GET /api/categories/:id - Get details of a specific category
+- PUT /api/categories/:id - Update the details of a category
+- DELETE /api/categories/:id - Delete a category
+
+### Testing
+
+To run the tests use the following command:
+
+`
+npm test`
