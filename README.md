@@ -1,66 +1,78 @@
+# Kalu Chibuikem Victor - BookStore Api
 
-# Project: Bookstore API
-## Overview:
-Build a RESTful API for a bookstore application using Node.js, Express, and TypeScript. The API should manage books, authors, and categories. Each book has a title, author, category, publication year, and ISBN.
+## Overview
 
-## Requirements:
-### Setup:
+This is a backend built with express.js, node and typescript.
 
-- Initialize a new Node.js project using npm or yarn.
-- Use TypeScript for your project.
-#### Express Setup:
+Routes: A common way of structuring a backend would be to have separate folders for `routes`,`services` and `controllers`. I didn't go this route 😅 as I found i worked faster on this project with the databse logic in the controller.
 
-Set up an Express application with appropriate middleware.
-Include middleware for JSON parsing and logging.
+Middlewares: I have a middleware folder, for logging and maybe where I could have added authentication.I decided to write the logging logic to demonstrate my control of middlewares in an express application.
 
-#### Routes:
-Create routes for the following CRUD operations:
+Memory: It is connected to a Postgres Database using drizzle as an ORM. I went with drizzle as it is lighter and has an sql first design pattern. The postgres database is hosted locally to test the application please provide your own postgres Database.
 
-##### Books:
-- Create a new book.
-- Get a list of all books.
-- Get details of a specific book.
-- Update the details of a book.
-- Delete a book.
-  
-##### Authors:
-- Create a new author.
-- Get a list of all authors.
-- Get details of a specific author.
-- Update the details of an author.
-- Delete an author.
-  
-##### Categories:
-- Create a new category.
-- Get a list of all categories.
-- Get details of a specific category.
-- Update the details of a category.
-- Delete a category.
+Testing: I am using vitest. I chose this cause when i tried setting up jest I had module errors with typescript i just had to stick with what i know at that moment. The unit tests I write are for specific functionalities of the application, such as: Testing the pagination function calculation. I didn't know how to test a route, but, It is something I am willing to learn.
 
-#### Data Storage:
-- Use an in-memory array or a simple database (e.g., MongoDB or MySQL) to store books, authors, and categories.
-- Implement appropriate relationships between books, authors, and categories.
+## Getting Started
 
-#### Validation:
-- Validate the input data for creating and updating books, authors, and categories.
-- Include appropriate error handling and return meaningful error messages.
+To begin run
 
-#### Testing:
-Write unit tests for at least two routes using a testing framework of your choice (Jest, Mocha, etc.).
+```bash
+yarn install
+```
 
-#### Documentation:
-- Provide clear documentation on how to run your application and tests.
-- Include a brief overview of the project structure and any important design decisions.
-- Use Postman to document your endpoints
+First: Create a .env file with these values filled
 
-#### Bonus Points:
-- Implement sorting and filtering options for the list of books, authors, and categories.
-- Add pagination for the list endpoints.
-- Include user authentication middleware.
+```
+DATABASE_URL = ''
+PORT = ''
+```
 
-#### Submission Guidelines:
-- Fork this repository and commit your code.
-- Include a README.md file with instructions on how to run the application and tests.
-- Create a pull request with your completed assessment.
+Second:
 
+```bash
+yarn db:generate
+```
 
+This is to generate the types needed for the typescript compiler .
+
+Third:
+
+```bash
+yarn db:push
+```
+
+This is upload the schema of the application to your database.
+
+Finally:
+
+```bash
+yarn dev
+```
+
+### Scripts
+
+Here are scripts that are used to run this application.
+
+```json
+ "scripts": {
+    "dev": "nodemon index",
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "test": "vitest",
+    "db:generate": "drizzle-kit generate:pg --config=drizzle.config.ts",
+    "db:check": "drizzle-kit check:pg --config=drizzle.config.ts",
+    "db:migrate": "ts-node ./migrate.ts",
+    "db:studio": "drizzle-kit studio --config=drizzle.config.ts",
+    "db:push": "drizzle-kit push:pg --config=drizzle.config.ts"
+  }
+```
+
+## Tests
+
+```bash
+yarn test
+```
+
+## Endpoints
+
+ <img width="400" src="/endpoints_img.png" alt="Endpoints">
