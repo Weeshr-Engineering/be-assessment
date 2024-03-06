@@ -1,5 +1,7 @@
 import { Router } from "express";
 import { addBook, getBooks, getBook, updateBook, deleteBook } from "../controllers/book.controller";
+import { validationMiddleware } from "../validations";
+import { bookCreateSchema, bookUpdateSchema } from "../validations/book.validation";
 
 const BookRoutes = Router();
 
@@ -125,10 +127,10 @@ const BookRoutes = Router();
  *       '404':
  *         description: Book not found
  */
-BookRoutes.post("/create", addBook);
+BookRoutes.post("/create", validationMiddleware(bookCreateSchema), addBook);
 BookRoutes.get("/", getBooks);
 BookRoutes.get("/:id", getBook);
-BookRoutes.put("/:id", updateBook);
+BookRoutes.put("/:id", validationMiddleware(bookUpdateSchema), updateBook);
 BookRoutes.delete("/:id", deleteBook);
 
 export default BookRoutes;

@@ -1,5 +1,7 @@
 import { Router } from "express";
 import { addAuthor, deleteAuthor, getAuthor, getAuthors, updateAuthor } from "../controllers/author.controller";
+import { validationMiddleware } from "../validations";
+import { authorCreateSchema, authorUpdateSchema } from "../validations/author.validation";
 
 const AuthorRoutes = Router();
 
@@ -117,10 +119,10 @@ const AuthorRoutes = Router();
  *       '404':
  *         description: Author Not Found
  */
-AuthorRoutes.post("/create", addAuthor);
+AuthorRoutes.post("/create", validationMiddleware(authorCreateSchema), addAuthor);
 AuthorRoutes.get("/", getAuthors);
 AuthorRoutes.get("/:id", getAuthor);
-AuthorRoutes.put("/:id", updateAuthor);
+AuthorRoutes.put("/:id", validationMiddleware(authorUpdateSchema), updateAuthor);
 AuthorRoutes.delete("/:id", deleteAuthor);
 
 export default AuthorRoutes;

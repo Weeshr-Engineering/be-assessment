@@ -6,6 +6,16 @@ export class CategoryService {
     return await Category.create(data);
   }
 
+  static async getAll() {
+    return await Category.find();
+  }
+
+  static async getSingle(id: string) {
+    if (!(await Category.findOne({ id }))) throw new NotFoundError("Category Not Found");
+
+    return await Category.findOne({ id });
+  }
+
   static async update(id: string, data: categoryInterface) {
     if (!(await Category.findOne({ id }))) throw new NotFoundError("Category Not Found");
 

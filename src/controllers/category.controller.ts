@@ -15,7 +15,33 @@ export const addCategory: RequestHandler = async (
     next(error);
   }
 }
+export const getCategorys: RequestHandler = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  try {
+    const data = await CategoryService.getAll();
 
+    APIResponse.success(res, data, 200, "Categories fetched");
+  } catch (error) {
+    next(error);
+  }
+}
+
+export const getCategory: RequestHandler = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  try {
+    const data = await CategoryService.getSingle(req.params.id);
+
+    APIResponse.success(res, data, 200, "Category fetched");
+  } catch (error) {
+    next(error);
+  }
+}
 export const updateCategory: RequestHandler = async (
   req: Request,
   res: Response,
@@ -24,7 +50,7 @@ export const updateCategory: RequestHandler = async (
   try {
     const data = await CategoryService.update(req.params.id, req.body);
 
-    APIResponse.success(res, data, 200, "Book updated");
+    APIResponse.success(res, data, 200, "Category updated");
   } catch (error) {
     next(error);
   }
@@ -38,7 +64,7 @@ export const deleteCategory: RequestHandler = async (
   try {
     const data = await CategoryService.delete(req.params.id);
 
-    APIResponse.success(res, data, 204, "Book deleted");
+    APIResponse.success(res, data, 204, "Category deleted");
   } catch (error) {
     next(error);
   }
