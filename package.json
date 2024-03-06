@@ -1,4 +1,19 @@
 {
+  "name": "be-assessment",
+	"version": "1.0.0",
+	"description": "A REST API for a bookstore application using Node.js, Express, and TypeScript.",
+	"main": "index.js",
+	"scripts": {
+		"test": "jest",
+		"start:dev": "ts-node-dev --respawn --transpile-only ./src/main"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Horleryheancarh/weeshr-be-assessment.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "dotenv": "^16.4.5",

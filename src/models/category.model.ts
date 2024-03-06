@@ -7,4 +7,8 @@ const categorySchema = new Schema({
     }
 })
 
+export interface categoryInterface {
+  name: string,
+}
+
 export const Category = model('category', categorySchema)

@@ -1,13 +1,30 @@
-import { Book } from "../models/book.model";
+import { NotFoundError } from "../middlewares/error";
+import { Book, bookInterface } from "../models/book.model";
 
 export class BookService {
-  async create() {}
+  static async create(data: bookInterface) {
+    return await Book.create(data);
+  }
 
-  async getAll() {}
+  static async getAll() {
+    return await Book.find();
+  }
 
-  async getSingle() {}
+  static async getSingle(id: string) {
+    if (!(await Book.findOne({ id }))) throw new NotFoundError("Book Not Found");
 
-  async update() {}
+    return await Book.findOne({ id });
+  }
 
-  async delete() {}
+  static async update(id: string, data: bookInterface) {
+    if (!(await Book.findOne({ id }))) throw new NotFoundError("Book Not Found");
+
+    return await Book.findOneAndUpdate({ id }, data);
+  }
+
+  static async delete(id: string) {
+    if (!(await Book.findOne({ id }))) throw new NotFoundError("Book Not Found");
+
+    return await Book.findOneAndDelete({ id });
+  }
 }

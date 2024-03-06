@@ -29,4 +29,13 @@ const bookSchema = new Schema({
     }
 })
 
+export interface bookInterface {
+  title: string,
+  author: string,
+  description: string,
+  category: string,
+  publicationYear: number,
+  isbn: string,
+}
+
 export const Book = model('book', bookSchema)

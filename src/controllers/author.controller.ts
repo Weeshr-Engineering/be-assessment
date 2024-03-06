@@ -24,7 +24,7 @@ export const updateAuthor: RequestHandler = async (
   try {
     const data = await AuthorService.update(req.params.id, req.body);
 
-    APIResponse.success(res, data, 201, "Author updated");
+    APIResponse.success(res, data, 200, "Author updated");
   } catch (error) {
     next(error);
   }
@@ -38,7 +38,7 @@ export const getAuthors: RequestHandler = async (
   try {
     const data = await AuthorService.getAll();
 
-    APIResponse.success(res, data, 201, "Authors fetched");
+    APIResponse.success(res, data, 200, "Authors fetched");
   } catch (error) {
     next(error);
   }
@@ -52,7 +52,7 @@ export const getAuthor: RequestHandler = async (
   try {
     const data = await AuthorService.getSingle(req.params.id);
 
-    APIResponse.success(res, data, 201, "Author fetched");
+    APIResponse.success(res, data, 200, "Author fetched");
   } catch (error) {
     next(error);
   }
@@ -66,7 +66,7 @@ export const deleteAuthor: RequestHandler = async (
   try {
     const data = await AuthorService.delete(req.params.id);
 
-    APIResponse.success(res, data, 201, "Author deleted");
+    APIResponse.success(res, data, 204, "Author deleted");
   } catch (error) {
     next(error);
   }

@@ -1,13 +1,20 @@
-import { Category } from "../models/category.model";
+import { NotFoundError } from "../middlewares/error";
+import { Category, categoryInterface } from "../models/category.model";
 
 export class CategoryService {
-  async create() {}
+  static async create(data: categoryInterface) {
+    return await Category.create(data);
+  }
 
-  async getAll() {}
+  static async update(id: string, data: categoryInterface) {
+    if (!(await Category.findOne({ id }))) throw new NotFoundError("Category Not Found");
 
-  async getSingle() {}
+    return await Category.findOneAndUpdate({ id }, data);
+  }
 
-  async update() {}
+  static async delete(id: string) {
+    if (!(await Category.findOne({ id }))) throw new NotFoundError("Category Not Found");
 
-  async delete() {}
+    return await Category.findOneAndDelete({ id });
+  }
 }
