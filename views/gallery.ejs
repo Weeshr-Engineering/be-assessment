@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Books Library Gallery</title>
+    <link rel='stylesheet' href='/stylesheets/register.css' />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <section class="container-fluid product-container">
+  
+            <!-- Product Cards -->
+            <div class="col-md-9 products-section">
+              <h2 style="margin-top: -20px; margin-bottom: 30px;" class="text-center category-desc">All Products</h2>
+  
+              <div class="row">
+                <% if (productsList && productsList.length > 0) { %>
+                <% productsList.forEach(product => { %>
+  
+                <div class="col-md-3">
+                  <div
+                    style="height: 400px"
+                    class="card product-card position-relative"
+                  >
+                    <a href="/store/products/<%= product.id %>">
+                      <img
+                        style=" padding: 10px; margin: 0px auto; height: 210px; width: 100%;"
+                        src="<%= product.image %>"
+                        class="card-img-top img-fluid"
+                        alt="product Image"
+                      />
+                    </a>
+  
+                    <div style="margin-bottom: 0px;" class="card-body">
+                      <h5 class="card-title"><%= product.name.slice(0, 15)%></h5>
+                      <p class="card-text">₦<%= product.price %></p>
+                      <span style="padding-bottom: 0px; margin-bottom: 0px;"><i class="bi bi-star-fill "></i> <i class="bi bi-star-fill "></i> <i class="bi bi-star-fill "></i> <i class="bi bi-star-fill "></i> <i class="bi bi-star-fill "></i></span>
+  
+                      <div style=" width: 100%; margin: 0px; background-color:#f2b542 ;" class="add-to-cart-btn btn">
+                        <a
+                          style=" text-decoration: none; color: white"
+                          href="/store/products/<%= product.id %>"
+                          >Add to Cart</a
+                        >
+                      </div>
+                    </div>
+  
+                    
+                  </div>
+                </div>
+  
+                <% }) %>
+                <% } else { %>
+                  <p>No products found.</p>
+                <% } %>
+  
+          
+              </div>
+              <nav style="width: 10%; background: none;" aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                  <% for(let i = 1; i <= totalPages; i++) { %>
+                    <li class="page-item <% if (currentPage === i) { %>active<% } %>">
+                      <a style=" background-color: #f2b542; border: none;" class="page-link" href="/store/products?page=<%= i %>"><%= i %></a>
+                    </li>
+                  <% } %>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          </div>
+        </div>
+    
+  
+  
+  
+      </section>
+    
+  </body>
+</html>

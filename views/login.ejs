@@ -1,0 +1,141 @@
+extends layout
+
+block content
+    .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type="button", data-dismiss="modal")
+              span(aria-hidden="true") x 
+              span.sr-only Close
+            h2#myModalLabel.modal-title
+              | Login to the Alpha Library
+          .modal-body
+            form(role='form' method='GET' action='/books') // Changed action to '/login' for login route
+              div.form-group
+                label(for='name') <b> Email:</b>
+                input#name.form-control(type='email', placeholder='name@email.com' name='email')
+              div.form-group
+                label(for='email') <b>Password:</b>
+                input#email.form-control(type='password', placeholder='password' name='password')
+                button.btn.btn-primary(type="submit" style="background-color:green; margin-right:50px;") Login 
+            
+          .modal-footer
+            h6 Nemehimself
+    p.foot.text-xs-center copyright&copy; 2023
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//- extends layout
+
+//- block content
+//-     //- p test
+//-     .modal-dialog
+//-         .modal-content
+//-           // Modal Header
+//-           .modal-header
+//-             button.close(type="button", data-dismiss="modal")
+//-               span(aria-hidden="true") x 
+//-               span.sr-only Close
+//-             h2#myModalLabel.modal-title
+//-               | Welcome to the Alpha Library
+//-           // Modal Body
+//-           .modal-body
+//-             //#editForm.form(role='form' method='GET' action='https://www.google.com/')
+//-             form(role='form' method='GET' action='https://www.google.com/')
+//-               div.form-group
+//-                 label(for='name') <b> Email:</b>
+//-                 input#name.form-control(type='email', placeholder='name@email.com' name='email')
+//-               div.form-group
+//-                 label(for='email') <b>Password:</b>
+//-                 input#email.form-control(type='password', placeholder='password' name='password')
+                
+//-               button.btn.btn-primary(type="submit", name="asdf" style="background-color:green; margin-right:50px;")  Login 
+//-               button.btn.btn-primary(type="submit", name="asdf" style="margin-right:50px;" onClick='location.href="/register"')  Register 
+//-               button.btn.btn-default(type="button", data-dismiss="modal" style="background-color:red; color:white;") | Clear 
+//-           // Modal Footer
+//-           .modal-footer
+//-             h6 Nemehimself
+
+//-     // footer
+//-     p.foot.text-xs-center copyright&copy; 2023
+
+
+
+
+
+
+
+
+//- extends layout
+
+//- block content
+//-   h1 Library Manager
+//-   p Welcome to Library Manager
+//-   ul
+//-     li
+//-       | Books
+//-       ul
+//-         li
+//-           a(href="/new_book") New Book
+//-         li
+//-           a(href="all_books") List All
+//-         li
+//-           a(href="/overdue_books") List Overdue
+//-         li
+//-           a(href="/checked_books") List Checked Out
+//-     li
+//-       | Patrons
+//-       ul
+//-         li
+//-           a(href="/new_patron") New Patron
+//-         li
+//-           a(href="all_patrons") List All
+//-     li
+//-       | Loans
+//-       ul
+//-         li
+//-           a(href="new_loan") New Loan
+//-         li
+//-           a(href="all_loans") List All
+//-         li
+//-           a(href="overdue_loans") List Overdue
+//-         li
+//-           a(href="checked_loans") List Checked Out
+
+    //-       <form action="/add_movie" method="POST">
+    //-    <p>
+    //-      email: <input type="email" name="email" value=""/>
+    //-      Password : <input type="password" name="password" value=""/> 
+    //-    </p>
+
+    //-    <input type="submit" value="Login"/>
+    //-    <input type="submit" value="Register"/>
+
+    //-  </form>

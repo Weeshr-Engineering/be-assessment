@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/register.css' />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="book-main" >
+    
+        <div class="authorName-header" style=" color: #f1b442;  border: none; border-radius: 30px ; font-size: 20px;">
+          <h3>Hi <%= newUser.authorName %></h3><br>
+          <!-- <p>No of Books: <%= userProducts.length %></p><br> -->
+            
+                
+            <div style=" display: flex; width: 20%; margin: 0px auto 10px; justify-content: center;">
+              <button type="button" style="padding: 10px 20px;
+                background-color: #f1b442;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+                font-size: 20px;
+                margin: 0px auto 20px ;"
+              onmouseover="this.style.backgroundColor='#0098e1'"
+              onmouseout="this.style.backgroundColor='#f1b442'"
+              onclick="toggleFormVisibility('addBook')"
+            >Create Book</button>
+            </div>
+        
+        </div>
+
+
+    <div class="addBook" id="addBook">
+      <div class="form-container">
+        <div class="login">
+            <h1><a href="/">BOOK LIBRARY</a></h1>
+        </div>
+        <p>CREATE A BOOK</p>
+        <form action="/books/adminBooks" method="post">
+          <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" placeholder="Title" required>
+          </div>
+          <div class="form-group">
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description" placeholder="Description" required>
+          </div>
+          <div class="form-group">
+            <label for="pagecount">PageCount:</label>
+            <input type="text" id="pagecount" name="pagecount" placeholder="Pagecount" required>
+          </div>
+          <div class="form-group">
+            <label for="genre">Genre:</label>
+            <input type="text" id="genre" name="genre" placeholder="Genre" required>
+          </div>
+          <div class="form-group">
+            <label for="publisher">Publisher:</label>
+            <input type="text" id="publisher" name="publisher" placeholder="Publisher" required>
+          </div>
+          <div class="form-group">
+            <label for="datepublished">datePublished:</label>
+            <input type="text" id="datepublished" name="datepublished" placeholder="Datepublished" required>
+          </div>
+          <div class="button-group">
+            <button type="submit" class="save-btn">Save</button>
+            
+          </div>
+        </form>
+
+
+
+
+
+        <div class="gallery">
+            <% if (userProducts.length > 0) { %>
+              <% userProducts.forEach(product => { %>
+                <div class="each-product col-4">
+                  <img style="margin-bottom: 30px; height: 300px; width: 100%;" src="<%= product.image %>" alt="<%= product.name %>" />
+                  <h3><%= product.name %></h3>
+                  <p>Price: ₦<%= product.price %></p>
+                  <span style="color: #f1b442;"><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i></span>
+                  <div style="margin-top: 10px; padding: 0px 20px; display: flex; justify-content: space-between;">
+                    <button class="btn" type="button" style="padding: 10px 20px; width: 40%; background-color: #00b7ff; color: #fff; border: none; cursor: pointer; margin-top: 10px;" onmouseover="this.style.backgroundColor='#0098e1'" onmouseout="this.style.backgroundColor='#00B7FF'" onclick="toggleFormVisibility('edit-<%= product.id %>')">Edit</button>
+                    <div class="col-12" id="edit-<%= product.id %>" style="display: none; height: 100vh; position: fixed; top: 0; flex-direction: column; align-items: center; left: 0; justify-content: center; z-index: 1000; background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(10px);">
+                      <form class="editform container col-8" id="editForm-<%= product.id%>" action="/store/users/dashboard/<%=product.id%>?_method=PUT" method="POST">
+                        <div class="col-6">
+                          <label for="editedName">Name:</label><br />
+                          <input type="text" name="name" id="editedName" value="<%= product.name%>" /><br />
+                        </div>
+                        <!-- Add other input fields here -->
+                        <div class="col-7" style="margin: 20px auto 0px; display: flex; justify-content: space-between;">
+                          <button class="btn" type="submit" style="padding: 10px 20px; background-color: #65cc34; color: #fff; border: none; cursor: pointer; margin-top: 10px; width: 30%;" onmouseover="this.style.backgroundColor='#0098e1'" onmouseout="this.style.backgroundColor='#65cc34'">Save</button>
+                          <button class="btn" onclick="toggleFormVisibility('edit-<%= product.id %>')" type="button" style="padding: 10px 20px; background-color: #ff0000; color: #fff; border: none; cursor: pointer; margin-top: 10px; width: 30%;" onmouseover="this.style.backgroundColor='#5b2424'" onmouseout="this.style.backgroundColor='#ff0000'">Cancel</button>
+                        </div>
+                      </form>
+                    </div>
+                    <button class="btn" type="button" onclick="openDeleteModal('<%=product.id%>')" style="padding: 10px 20px; background-color: #ff0000; color: #fff; width: 40%; border: none; cursor: pointer; margin-top: 10px;" onmouseover="this.style.backgroundColor='#CC0000'" onmouseout="this.style.backgroundColor='#FF0000'">Delete</button>
+                  </div>
+                </div>
+              <% }); %>
+            <% } else { %>
+              <p>No products available</p>
+            <% } %>
+          </div>
+        
+          <!-- Pagination -->
+          <nav style="margin-top: 20px; width: 10%; background: none;" aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+              <% for(let i = 1; i <= totalPages; i++) { %>
+                <li class="page-item <% if (currentPage === i) { %>active<% } %>">
+                  <a style="background-color: black; border: none;" class="page-link" href="/store/users/dashboard?page=<%= i %>"><%= i %></a>
+                </li>
+              <% } %>
+            </ul>
+          </nav>
+
+
+        
+    </div>
+
+    <script src="/javascripts/scripts.js"></script>
+
+  </body>
+</html>
