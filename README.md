@@ -8,8 +8,9 @@ This documentation outlines CRUD (Create, Read, Update, Delete) operations for m
 
 To start the application, run the following command:
 
+```
 npm run dev
-
+```
 
 ## Code Structure
 
@@ -37,6 +38,7 @@ project-root
     │   users.ts
 
 In the `model` folder, you'll find all schemas and models. The `controller` folder contains route logic. The `routes` folder contains route files for each endpoint. These route files are exported into `app.ts`, where the app is initialized. Finally, `app.ts` is exported to `server.ts`, which is the root file of the application.
+```
 
 ## Authentication
 
