@@ -37,6 +37,24 @@ Create routes for the following CRUD operations:
 - Update the details of a category.
 - Delete a category.
 
+#### INSTALLATION
+- To run the Bookstore API and its tests, follow these steps
+- git clone https://github.com/Marktech2002/be-assessment.git
+- cd be-assessment
+- npm install
+- set up .env file 
+- PORT=5001
+- MONGO_URL=
+- NODE_ENV=development
+- JWT_SECRET=
+- ACCESS_TOKEN_SECRET=
+- REFRESH_TOKEN_SECRET=
+- ACCESS_TOKEN_EXPIRES_IN=
+- REFRESH_TOKEN_EXPIRES_IN=
+- npm start 
+
+## TESTING 
+- npm test
 #### Data Storage:
 - Use an in-memory array or a simple database (e.g., MongoDB or MySQL) to store books, authors, and categories.
 - Implement appropriate relationships between books, authors, and categories.
@@ -63,4 +81,26 @@ Write unit tests for at least two routes using a testing framework of your choic
 - Include a README.md file with instructions on how to run the application and tests.
 - Create a pull request with your completed assessment.
 
+#### Submission Guidelines:
+- Fork this repository and commit your code.
+- Include a README.md file with instructions on how to run the application and tests.
+- Create a pull request with your completed assessment.
 
+#### INSTALLATION
+- To run the Bookstore API and its tests, follow these steps
+- git clone https://github.com/Marktech2002/be-assessment.git
+- cd be-assessment
+- npm install
+- set up .env file 
+- PORT=5001
+- MONGO_URL=
+- NODE_ENV=development
+- JWT_SECRET=
+- ACCESS_TOKEN_SECRET=
+- REFRESH_TOKEN_SECRET=
+- ACCESS_TOKEN_EXPIRES_IN=
+- REFRESH_TOKEN_EXPIRES_IN=
+- npm start 
+
+## TESTING 
+- npm test
