@@ -1,45 +1,34 @@
 import mongoose from "mongoose";
-import  user  from '../model/user';
-import  category  from '../model/categories';
-
+import user from "./author";
+import category from "../model/categories";
 
 export interface IBook extends Document {
-    Title: string;
-    Description: string;
-    pageCount: string;
-    Genre: string;
-    Publisher: string;
-    datePublished: string;
-    user: string; // Assuming user is referenced by ID
-  }
+  Title: string;
+  Description: string;
+  pageCount: string;
+  Genre: string;
+  Publisher: string;
+  datePublished: string;
+  user: string; // Assuming user is referenced by ID
+}
 
 const bookSchema = new mongoose.Schema({
-    Title: {type:String, required:true},
-    Description:{type:String, required:true},
-    pageCount: {type:String, required:true},
-    Genre: {type:String, required:true},
-    Publisher: {type:String, required:true},
-    datePublished: {type:String, required:true},
-    createdAt: {type: Date, default: Date.now},
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'user'
-    }
+  Title: { type: String, required: true },
+  Description: { type: String, required: true },
+  pageCount: { type: String, required: true },
+  Genre: { type: String, required: true },
+  Publisher: { type: String, required: true },
+  datePublished: { type: String, required: true },
+  createdAt: { type: Date, default: Date.now },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "user",
+  },
 });
 
 const books = mongoose.model<IBook>("books", bookSchema);
 
-
 export default books;
-
-
-
-
-
-
-
-
-
 
 // import { Sequelize, DataTypes, Model } from "sequelize";
 // import sequelize from "../database.config";
@@ -54,7 +43,7 @@ export default books;
 //     datePublished: string;
 //     authorId:string;
 // }
-// export class books extends Model 
+// export class books extends Model
 // <bookAttributes> {}
 
 // books.init({
@@ -91,7 +80,7 @@ export default books;
 //         autoIncrement: true,
 //         allowNull: false,
 //         primaryKey: true,
-        
+
 //     },
 
 //     authorId: {
@@ -101,7 +90,7 @@ export default books;
 //             key: 'id'
 //         },
 //     }
-    
+
 // },
 // {
 //     sequelize,
@@ -111,46 +100,20 @@ export default books;
 
 // export default books;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // export class Book extends Model {
 //     public bookId!: string;
 //     public userId!: number; // Foreign key from User model
-  
+
 //     static associate(models: any) {
 //       // Define associations here
 //       Book.belongsTo(models.User, { foreignKey: 'userId' }); // Book belongs to a User
 //     }
 //   }
 
-
 // userId: {
-    //     type: DataTypes.INTEGER,
-    //     references: {
-    //       model: user,
-    //       key: 'id', // This refers to the primary key 'id' in the User model
-    //     },
-    //   },
+//     type: DataTypes.INTEGER,
+//     references: {
+//       model: user,
+//       key: 'id', // This refers to the primary key 'id' in the User model
+//     },
+//   },

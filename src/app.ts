@@ -13,7 +13,7 @@ import mongoose from 'mongoose';
 
 //import routes
 import indexRouter from  './routes/index';
-import usersRouter from './routes/user';
+import usersRouter from './routes/author';
 import booksRouter from './routes/books';
 import register from './routes/register';
 import categoriesRouter from './routes/categories';

@@ -1,21 +1,27 @@
-import { Request, Response, NextFunction } from 'express';
-import jwt from 'jsonwebtoken';
-import user from '../model/user';
+import { Request, Response, NextFunction } from "express";
+import jwt from "jsonwebtoken";
+import user from "../model/author";
 
 // Define a custom interface to extend the Request type
 interface AuthRequest extends Request {
-  user?: {id:string}; // Add the userId property to the Request type
+  user?: { id: string }; // Add the userId property to the Request type
 }
 
 // Middleware to check if the request has a valid token
 
-export const authorize = async (req: AuthRequest, res: Response, next: NextFunction) => {
+export const authorize = async (
+  req: AuthRequest,
+  res: Response,
+  next: NextFunction
+) => {
   try {
     // Get the token from the request header
-    const token = req.header('Authorization')?.replace('Bearer ', '');
+    const token = req.header("Authorization")?.replace("Bearer ", "");
 
     if (!token) {
-      return res.status(401).json({ message: 'Unauthorized: No token provided' });
+      return res
+        .status(401)
+        .json({ message: "Unauthorized: No token provided" });
     }
 
     // Verify the token using your secret key
@@ -31,15 +37,10 @@ export const authorize = async (req: AuthRequest, res: Response, next: NextFunct
     next();
   } catch (error) {
     // Log the error for debugging purposes
-    console.error('Authorization Error:', error);
-    res.status(401).json({ message: 'Unauthorized: Invalid token' });
+    console.error("Authorization Error:", error);
+    res.status(401).json({ message: "Unauthorized: Invalid token" });
   }
 };
-
-
-
-
-
 
 // export const authorize = async (req: AuthRequest, res: Response, next: NextFunction)  => {
 
@@ -75,8 +76,3 @@ export const authorize = async (req: AuthRequest, res: Response, next: NextFunct
 //     res.status(401).json({ message: 'Unauthorized: Invalid token' });
 //   }
 // };
-
-
-
-
-
